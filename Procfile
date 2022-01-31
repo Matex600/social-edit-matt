@@ -1,0 +1,1 @@
+web: gunicorn meddit_matt.wsgi
