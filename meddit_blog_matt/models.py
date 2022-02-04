@@ -1,3 +1,8 @@
+"""
+Importing models from django
+User from Auth
+Cloudinary model
+"""
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
@@ -9,7 +14,11 @@ STATUS = (
 
 
 class Post(models.Model):
-    
+    """
+    A class to represent the model for posts in the blog
+    Detalis the functionality that will be present when
+    Creating Post
+    """
     title = models.CharField(max_length=255)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
@@ -22,15 +31,26 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_upvote', blank=True)
 
     class Meta:
+        """
+        Ordering of Objects from last to first
+        """
         ordering = ['-date_created']
 
     def __str__(self):
         return self.title + ' | ' + str(self.author)
 
     def number_of_likes(self):
+        """
+        Method returns total number of likes on post
+        """
         return self.likes.count()
 
+
 class Comment(models.Model):
+    """
+    Class represnting comment model
+    that have to be approved by an admin
+    """
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name='comments')
     name = models.CharField(max_length=80)
