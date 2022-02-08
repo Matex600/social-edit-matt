@@ -13,8 +13,16 @@
     + [Mobile](#mobile)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-  * [Coding Languages](#coding-languages)
-- [Libraries and Tools](#libraries-and-tools)
+- [Coding Languages](#coding-languages)
+  * [HTML5](https://en.wikipedia.org/wiki/HTML5). - Site structure.
+  * [CSS3](https://en.wikipedia.org/wiki/CSS). - Site Design.
+  * [Python3](https://en.wikipedia.org/wiki/Python_(programming_language)). - Used with Django.
+- [Libraries and Frameworks](#libraries-and-tools)
+  * [Django](https://www.djangoproject.com/) - Framework used to build the site and admin page.
+  * [HerokuSQL](https://www.heroku.com/postgres) - Database used in the project.
+  * [Python OS](https://docs.python.org/3/library/os.html). - Used for ```os.environ```.
+  * [Markdown](https://en.wikipedia.org/wiki/Markdown). - Used for creating README.md document.
+  * [Bootstrap](https://getbootstrap.com/). - Used for styling the site a framework addition to CSS3.
 - [Testing](#testing)
   * [Validation](#validation)
   * [Bugs](#bugs)
