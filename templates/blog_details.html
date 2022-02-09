@@ -1,0 +1,11 @@
+
+
+<h1>{{ post.title }}</h1>
+<small>By: {{post.author.first_name }} {{post.author.last_name}} </small><br/>
+
+{{ post.body | safe}}
+
+
+
+
+<a href="{% url 'home' %}">Go Back!</a>
