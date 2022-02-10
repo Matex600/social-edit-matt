@@ -6,6 +6,7 @@ Cloudinary model
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 STATUS = (
     (0, 'Draft'),
@@ -19,8 +20,8 @@ class Post(models.Model):
     Detalis the functionality that will be present when
     Creating Post
     """
-    title = models.CharField(max_length=255)
-    title_tag = models.CharField(max_length=255, default='Meddit Blog!')
+    title = models.CharField(max_length=260)
+    title_tag = models.CharField(max_length=255)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     body = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -32,7 +33,13 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_upvote', blank=True)
 
     def __str__(self):
-        return self.title + ' | ' + str(self.author)
+        return f"{self.title} | {self.author}"
+
+    def get_absolute_url(self):
+        """
+        This fixes an error which the button on add blog post is not taking user back as expected.
+        """
+        return reverse('home')
 
     class Meta:
         """
