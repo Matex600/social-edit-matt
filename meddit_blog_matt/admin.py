@@ -3,13 +3,12 @@ from django_summernote.admin import SummernoteModelAdmin
 from .models import Post, Comment
 
 
-
 @admin.register(Post)
 class BlogAdmin(SummernoteModelAdmin):
     """
     Class for creating blog post in admin view
     """
-    list_display = ('title', 'slug', 'status', 'date_created')
+    list_display = ('title', 'author', 'updated_on', 'slug', 'status', 'date_created')
     search_fields = ['title', 'body']
     list_filter = ('status', 'date_created')
     prepopulated_fields = {'slug': ('title',)}
