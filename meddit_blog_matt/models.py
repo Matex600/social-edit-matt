@@ -19,7 +19,8 @@ class Post(models.Model):
     Detalis the functionality that will be present when
     Creating Post
     """
-    title = models.CharField(max_length=255, unique=True)
+    title = models.CharField(max_length=255)
+    title_tag = models.CharField(max_length=255, default='Meddit Blog!')
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     body = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -30,14 +31,14 @@ class Post(models.Model):
     section = models.TextField(blank=True)
     likes = models.ManyToManyField(User, related_name='blog_upvote', blank=True)
 
+    def __str__(self):
+        return f"{self.title} | {self.author}"
+
     class Meta:
         """
         Ordering of Objects from last to first
         """
         ordering = ['-date_created']
-
-    def __str__(self):
-        return self.title + ' | ' + str(self.author)
 
     def number_of_likes(self):
         """
