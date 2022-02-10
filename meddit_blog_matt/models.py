@@ -32,7 +32,7 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_upvote', blank=True)
 
     def __str__(self):
-        return f"{self.title} | {self.author}"
+        return self.title + ' | ' + str(self.author)
 
     class Meta:
         """
