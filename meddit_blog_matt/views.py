@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import Post
-from .forms import AddPostForm
+from .forms import AddPostForm, EditPostForm
 
 
 class MainView(ListView):
@@ -21,6 +21,7 @@ class BlogDetailView(DetailView):
     model = Post
     template_name = 'blog_details.html'
 
+
 class AddPostView(CreateView):
     """
     View for add_blog_post.html PLACEHOLDER
@@ -28,4 +29,12 @@ class AddPostView(CreateView):
     model = Post
     form_class = AddPostForm
     template_name = 'add_blog_post.html'
-    
+
+
+class EditPostView(UpdateView):
+    """
+    View for edit_blog_post.html PLACEHOLDER
+    """
+    model = Post
+    form_class = EditPostForm
+    template_name = 'edit_blog_post.html'
