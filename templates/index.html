@@ -11,7 +11,7 @@
     <li><a href="{% url 'blog-detail' post.pk  %}">{{ post.title }}</a> - {{ post.author.first_name }}
         {{ post.author.last_name }} <br/>
         {{ post.body | safe}} 
-        {{ post.date_created }} 
+        {{ post.date_created }} - <small><a class="btn btn-dark" href="{% url 'edit_post' post.pk  %}">Edit</a></small>
     </li>
     
 {% endfor %}
