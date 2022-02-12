@@ -41,12 +41,6 @@ class Post(models.Model):
         """
         return reverse('home')
 
-    class Meta:
-        """
-        Ordering of Objects from last to first
-        """
-        ordering = ['-date_created']
-
     def number_of_likes(self):
         """
         Method returns total number of likes on post
