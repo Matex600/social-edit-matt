@@ -3,23 +3,21 @@
 
 
 {% block content %}
-    
+
 <h1>Posts</h1>
 
 <ul>
-{% for post in object_list %}
+    {% for post in object_list %}
     <li><a href="{% url 'blog-detail' post.pk  %}">{{ post.title }}</a> - {{ post.author.first_name }}
-        {{ post.author.last_name }} <br/>
-        {{ post.body | safe}} 
-        {{ post.date_created }} - <small>
+        {{ post.author.last_name }} <br /> {{ post.body | safe}} {{ post.date_created }}
+        <small> <br/>
             <a class="btn btn-dark" href="{% url 'edit_post' post.pk  %}">Edit</a>
-            <br>
+            
             <a class="btn btn-danger" href="{% url 'delete_post' post.pk  %}">Delete</a>
-        
+
         </small>
     </li>
-    
-{% endfor %}
-</ul
 
+    {% endfor %}
+</ul 
 {% endblock %}
