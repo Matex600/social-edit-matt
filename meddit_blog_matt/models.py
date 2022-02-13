@@ -25,8 +25,9 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     body = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    slug = models.SlugField(max_length=300, unique=True)
+    slug = models.SlugField(max_length=300, unique=True, null=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    category = models.CharField(max_length=255, default='Uncategorised')
     post_image = CloudinaryField('image', default='proxy-image')
     date_created = models.DateTimeField(auto_now_add=True)
     section = models.TextField(blank=True)
@@ -50,7 +51,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     """
-    Class represnting comment model
+    Class representing comment model
     that have to be approved by an admin
     """
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
@@ -66,3 +67,19 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.content} by {self.name}"
+
+
+class Category(models.Model):
+    """
+    Class representing categories model
+    """
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.name}"
+
+    def get_absolute_url(self):
+        """
+        This fixes an error which the button on add blog post is not taking user back as expected.
+        """
+        return reverse('home')
