@@ -26,21 +26,35 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'add_post' %}">Create a Post</a>
                     </li>
+                    <li>
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li> 
+                    {% else %}
+                    <li>
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+
+                    {% endif %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             User
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
-                            <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+                            
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+
                         </ul>
                     </li>
                 </ul>
