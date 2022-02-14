@@ -33,6 +33,13 @@ class AddPostView(CreateView):
     template_name = 'add_blog_post.html'
 
 
+def category_view(request, cate):
+    """
+
+    """
+    category_posts = Post.objects.filter(category=cate)
+    return render(request, 'categories.html', {'cate': cate, 'category_posts': category_posts})
+
 class AddCategoryView(CreateView):
     """
     View for add_blog_post.html PLACEHOLDER
