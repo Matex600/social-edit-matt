@@ -16,7 +16,7 @@
         <a class="btn btn-danger" href="{% url 'delete_post' post.pk  %}">Delete</a>
     {% endif %}
 </small>
-{{ post.body | safe}}
+{{ post.body | linebreaks}}
 
 
 
