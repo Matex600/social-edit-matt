@@ -37,8 +37,8 @@ def category_view(request, cate):
     """
 
     """
-    category_posts = Post.objects.filter(category=cate)
-    return render(request, 'categories.html', {'cate': cate, 'category_posts': category_posts})
+    category_posts = Post.objects.filter(category=cate.replace('-', ' '))
+    return render(request, 'categories.html', {'cate': cate.title().replace('-', ' '), 'category_posts': category_posts})
 
 
 class AddCategoryView(CreateView):
