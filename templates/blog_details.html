@@ -3,30 +3,39 @@
 
 {% block content %}
 
-<h1>{{ post.title }}</h1>
-<small>By: 
-    {{post.author.username}}
-    {{post.date_created}} 
+    <h1>{{ post.title }}</h1>
+    <small>By: 
+        {{post.author.username}}
+        {{post.date_created}} 
 
-    {% if user.is_authenticated %}
-        {% if user.id == post.author.id %}
-        <a href="{% url 'edit_post' post.pk  %}">Edit</a> 
-        
-        <a href="{% url 'delete_post' post.pk  %}">Delete</a>
-        <hr>
+        {% if user.is_authenticated %}
+            {% if user.id == post.author.id %}
+            <a href="{% url 'edit_post' post.pk  %}">Edit</a> 
+            
+            <a href="{% url 'delete_post' post.pk  %}">Delete</a>
+            <hr>
+            {% endif %}
         {% endif %}
-    {% endif %}
-</small>
-{{ post.body | linebreaks}}
-<a href="{% url 'home' %}" class="btn btn-secondary">Go Back!</a>
-<hr>
+    </small>
+    {{ post.body | linebreaks}}
+    <a href="{% url 'home' %}" class="btn btn-secondary">Go Back!</a>
+    <hr>
 
 
-<form action="{% url 'up_vote_post' post.pk %}" method="POST">
-    {% csrf_token %}
-    <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-success btn-sm">Upvote</button> - {{ number_of_likes }} - votes
-</form>
-<br>
+    <form action="{% url 'up_vote_post' post.pk %}"
+     method="POST">
+        {% csrf_token %}
+
+            {% if user in post.likes.all %}
+                <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Downvote</button>
+
+            {% else %}
+                <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-success btn-sm">Upvote</button>
+
+            {% endif %}
+    - {{ number_of_likes }} - votes
+    </form>
+    <br>
 
 
 
