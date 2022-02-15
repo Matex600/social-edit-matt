@@ -30,7 +30,6 @@ class Post(models.Model):
     category = models.CharField(max_length=255, default='Uncategorised')
     post_image = CloudinaryField('image', default='proxy-image')
     date_created = models.DateTimeField(auto_now_add=True)
-    section = models.TextField(blank=True)
     likes = models.ManyToManyField(User, related_name='blog_upvote', blank=True)
 
     def __str__(self):
