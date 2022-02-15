@@ -11,9 +11,15 @@ class MainView(ListView):
     """
     model = Post
     template_name = 'index.html'
-    queryset = Post.objects.filter(status=1).order_by('-date_created')
     paginate_by = 6
+    cate = Category.objects.all()
     ordering = ['-date_created']
+
+    def get_context_data(self, *args, **kwargs):
+        cate_menu = Category.objects.all()
+        context = super(MainView, self).get_context_data(*args, **kwargs)
+        context['cate_menu'] = cate_menu
+        return context
 
 
 class BlogDetailView(DetailView):
@@ -22,6 +28,7 @@ class BlogDetailView(DetailView):
     """
     model = Post
     template_name = 'blog_details.html'
+    
 
 
 class AddPostView(CreateView):

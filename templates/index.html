@@ -8,21 +8,24 @@
 
 <ul>
     {% for post in object_list %}
-    <li><a href="{% url 'blog-detail' post.pk  %}">
-        {{ post.title }}</a>
-       - <a href="{% url 'category' post.category|slugify %}">{{ post.category}}</a> -
-        {{ post.author.first_name }}
-        {{ post.author.last_name }}
-        {{ post.body | linebreaks | slice:":200"}} {{ post.date_created }}
-        <small> <br/>
-            {% if user.is_authenticated %}
-                <a class="btn btn-dark" href="{% url 'edit_post' post.pk  %}">Edit</a>
-            
-                <a class="btn btn-danger" href="{% url 'delete_post' post.pk  %}">Delete</a>
-            {% endif %}
-        </small>
-    </li>
+        <li><a href="{% url 'blog-detail' post.pk  %}">
+            {{ post.title }}</a>
+        - <a href="{% url 'category' post.category|slugify %}">{{ post.category}}</a> -
+            {{ post.author.first_name }}
+            {{ post.author.last_name }}
+            {{ post.body | linebreaks | slice:":200"}} {{ post.date_created }}
+            <small> <br/>
+                {% if user.is_authenticated %}
+                    <a class="btn btn-dark" href="{% url 'edit_post' post.pk  %}">Edit</a>
+                
+                    <a class="btn btn-danger" href="{% url 'delete_post' post.pk  %}">Delete</a>
+                {% endif %}
+            </small>
+        </li>
 
     {% endfor %}
-</ul 
+    </ul 
+
+
+
 {% endblock %}

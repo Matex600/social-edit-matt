@@ -49,24 +49,22 @@
                     </li>
 
                     {% endif %}
+                    <!-- Category Menu -->
+                    {% if cate_menu %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            User
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Categories
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
+                            {% for item in cate_menu %}
+                            <li><a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }}</a></li>
 
+                            {% endfor %}
                         </ul>
-                    </li>
+                      </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                {% endif %}
             </div>
         </div>
     </nav>
