@@ -26,7 +26,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['project4-matt-ci.herokuapp.com', 'localhost']
 
@@ -62,7 +62,9 @@ ROOT_URLCONF = 'meddit_matt.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
+        'DIRS': [
+            'templates'
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
