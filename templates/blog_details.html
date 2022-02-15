@@ -11,18 +11,24 @@
 
     {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
-        <a class="btn btn-dark" href="{% url 'edit_post' post.pk  %}">Edit</a> 
-        <br/>
-
-        <a class="btn btn-danger" href="{% url 'delete_post' post.pk  %}">Delete</a>
+        <a href="{% url 'edit_post' post.pk  %}">Edit</a> 
+        
+        <a href="{% url 'delete_post' post.pk  %}">Delete</a>
+        <hr>
         {% endif %}
     {% endif %}
 </small>
 {{ post.body | linebreaks}}
-
-
-
-
 <a href="{% url 'home' %}" class="btn btn-secondary">Go Back!</a>
+<hr>
+
+
+<form action="{% url 'up_vote_post' post.pk %}" method="POST">
+    {% csrf_token %}
+    <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-success btn-sm">Upvote</button> - {{ number_of_likes }} - votes
+</form>
+<br>
+
+
 
 {% endblock %}
