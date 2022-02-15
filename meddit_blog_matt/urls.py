@@ -1,6 +1,11 @@
 from django.urls import path
 from .views import MainView, BlogDetailView, AddPostView, EditPostView, DeletePostView, AddCategoryView, category_view, category_list_view, like_view
 
+handler400 = 'meddit_blog_matt.views.handler400'
+handler403 = 'meddit_blog_matt.views.handler403'
+handler404 = 'meddit_blog_matt.views.handler404'
+handler500 = 'meddit_blog_matt.views.handler500'
+
 urlpatterns = [
     path('', MainView.as_view(), name='home'),
     path('blog/<int:pk>', BlogDetailView.as_view(), name='blog-detail'),
