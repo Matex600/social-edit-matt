@@ -28,7 +28,6 @@ class BlogDetailView(DetailView):
     """
     model = Post
     template_name = 'blog_details.html'
-    
 
 
 class AddPostView(CreateView):
@@ -40,9 +39,17 @@ class AddPostView(CreateView):
     template_name = 'add_blog_post.html'
 
 
+def category_list_view(request):
+    """
+    View for add_blog_post.html PLACEHOLDER
+    """
+    cate_menu_list = Category.objects.all()
+    return render(request, 'category_list.html', {'cate_menu_list': cate_menu_list})
+
+
 def category_view(request, cate):
     """
-
+    View for add_blog_post.html PLACEHOLDER
     """
     category_posts = Post.objects.filter(category=cate.replace('-', ' '))
     return render(request, 'categories.html', {'cate': cate.title().replace('-', ' '), 'category_posts': category_posts})
