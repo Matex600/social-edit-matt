@@ -5,8 +5,7 @@
 
 <h1>{{ post.title }}</h1>
 <small>By: 
-    {{post.author.first_name }} 
-    {{post.author.last_name}}
+    {{post.author.username}}
     {{post.date_created}} 
 
     {% if user.is_authenticated %}

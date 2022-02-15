@@ -11,8 +11,8 @@
         <li><a href="{% url 'blog-detail' post.pk  %}">
             {{ post.title }}</a>
         - <a href="{% url 'category' post.category|slugify %}">{{ post.category}}</a> -
-            {{ post.author.first_name }}
-            {{ post.author.last_name }}
+            {{ post.author.username }}
+            
             {{ post.body | linebreaks | slice:":200"}} {{ post.date_created }}
             <small> <br/>
                 {% if user.is_authenticated %}
