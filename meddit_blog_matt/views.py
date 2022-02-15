@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 from .models import Post, Category
 from .forms import AddPostForm, EditPostForm
+
 
 class MainView(ListView):
     """
@@ -17,7 +19,7 @@ class MainView(ListView):
 
     def get_context_data(self, *args, **kwargs):
         cate_menu = Category.objects.all()
-        context = super(MainView, self).get_context_data(*args, **kwargs)
+        context = super().get_context_data(*args, **kwargs)
         context['cate_menu'] = cate_menu
         return context
 
@@ -28,6 +30,24 @@ class BlogDetailView(DetailView):
     """
     model = Post
     template_name = 'blog_details.html'
+
+    def get_context_data(self, *args, **kwargs):
+        cate_menu = Category.objects.all()
+        context = super().get_context_data(*args, **kwargs)
+        likes_id = get_object_or_404(Post, id=self.kwargs['pk'])
+        number_of_likes = likes_id.number_of_likes()
+        context['cate_menu'] = cate_menu
+        context['number_of_likes'] = number_of_likes
+        return context
+
+
+def like_view(request, pk):
+    """
+    View for individual pages for each post PLACEHOLDER
+    """
+    post = Post.objects.get(id=pk)
+    post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('blog-detail', args=[str(pk)]))
 
 
 class AddPostView(LoginRequiredMixin, CreateView):
