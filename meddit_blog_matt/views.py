@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Post, Category
 from .forms import AddPostForm, EditPostForm
-
 
 class MainView(ListView):
     """
@@ -30,13 +30,17 @@ class BlogDetailView(DetailView):
     template_name = 'blog_details.html'
 
 
-class AddPostView(CreateView):
+class AddPostView(LoginRequiredMixin, CreateView):
     """
     View for add_blog_post.html PLACEHOLDER
     """
     model = Post
     form_class = AddPostForm
     template_name = 'add_blog_post.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 def category_list_view(request):
