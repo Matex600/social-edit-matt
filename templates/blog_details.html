@@ -10,10 +10,12 @@
     {{post.date_created}} 
 
     {% if user.is_authenticated %}
+        {% if user.id == post.author.id %}
         <a class="btn btn-dark" href="{% url 'edit_post' post.pk  %}">Edit</a> 
         <br/>
 
         <a class="btn btn-danger" href="{% url 'delete_post' post.pk  %}">Delete</a>
+        {% endif %}
     {% endif %}
 </small>
 {{ post.body | linebreaks}}

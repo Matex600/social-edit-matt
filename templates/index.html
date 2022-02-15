@@ -7,7 +7,7 @@
 <h1>Posts</h1>
 
 <ul>
-    {% for post in object_list %}
+{% for post in object_list %}
         <li><a href="{% url 'blog-detail' post.pk  %}">
             {{ post.title }}</a>
         - <a href="{% url 'category' post.category|slugify %}">{{ post.category}}</a> -
@@ -16,15 +16,17 @@
             {{ post.body | linebreaks | slice:":200"}} {{ post.date_created }}
             <small> <br/>
                 {% if user.is_authenticated %}
+                    {% if user.id == post.author.id %}
                     <a class="btn btn-dark" href="{% url 'edit_post' post.pk  %}">Edit</a>
                 
                     <a class="btn btn-danger" href="{% url 'delete_post' post.pk  %}">Delete</a>
+                    {% endif %}
                 {% endif %}
             </small>
         </li>
 
-    {% endfor %}
-    </ul 
+{% endfor %}
+</ul 
 
 
 

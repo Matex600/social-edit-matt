@@ -4,6 +4,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
     <br/>
     <h1>Delete this post?</h1>
     <br/>
@@ -14,6 +15,9 @@
         <br/>
         <button class="btn btn-success">Delete Post?</button>
     </div>
+    {% else %}
+        You have tried to go somewhere you are not allowed to be !!
+    {% endif %}
 {% endif %}
 
 
