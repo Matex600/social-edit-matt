@@ -25,7 +25,6 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     body = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    slug = models.SlugField(max_length=300, unique=True, null=True)
     status = models.IntegerField(choices=STATUS, default=0)
     category = models.CharField(max_length=255, default='Uncategorised')
     post_image = CloudinaryField('image', default='proxy-image')

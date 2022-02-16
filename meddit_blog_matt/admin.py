@@ -8,10 +8,9 @@ class BlogAdmin(SummernoteModelAdmin):
     """
     Class for creating blog post in admin view
     """
-    list_display = ('title', 'author', 'updated_on', 'slug', 'status', 'date_created')
+    list_display = ('title', 'author', 'updated_on', 'status', 'date_created')
     search_fields = ['title', 'body']
     list_filter = ('status', 'date_created')
-    prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('body')
 
 
