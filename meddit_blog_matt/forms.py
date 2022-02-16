@@ -11,7 +11,8 @@ for item in choices:
 
 class AddPostForm(forms.ModelForm):
     """
-    Form class for my create post functionality PLACEHOLDER
+    Class that uses bootstrap classes to style fields
+    Populates fields when creating post
     """
     class Meta:
         """
@@ -30,7 +31,8 @@ class AddPostForm(forms.ModelForm):
 
 class EditPostForm(forms.ModelForm):
     """
-    Form class for my create post functionality PLACEHOLDER
+    Class that uses bootstrap classes to style fields
+    Populates fields when editing fields
     """
     class Meta:
         """
