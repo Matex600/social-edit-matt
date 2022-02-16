@@ -27,7 +27,7 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     category = models.CharField(max_length=255, default='Uncategorised')
     blog_snippet = models.CharField(max_length=255)
-    post_image = CloudinaryField('image', default='proxy-image')
+    post_image = CloudinaryField('image', null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name='blog_upvote', blank=True)
 
