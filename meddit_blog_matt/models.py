@@ -21,7 +21,6 @@ class Post(models.Model):
     Creating Post
     """
     title = models.CharField(max_length=260)
-    title_tag = models.CharField(max_length=255)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     body = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
