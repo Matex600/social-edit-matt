@@ -6,7 +6,7 @@ from .models import Post, Comment, Category
 @admin.register(Post)
 class BlogAdmin(SummernoteModelAdmin):
     """
-    Class for creating blog post in admin view
+    Class that populates fields when creating a post in the Django Admin Panel
     """
     list_display = ('title', 'author', 'updated_on', 'status', 'date_created')
     search_fields = ['title', 'body']
@@ -17,7 +17,7 @@ class BlogAdmin(SummernoteModelAdmin):
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     """
-    Class for creating comments in admin view
+    Class that populates fields when creating a comment in the Django Admin Panel
     """
     list_display = ('name', 'content', 'post', 'date_created', 'approved')
     list_filter = ('approved', 'date_created')
@@ -25,6 +25,10 @@ class CommentAdmin(admin.ModelAdmin):
     actions = ['approve_comments']
 
     def approve_comments(self, request, queryset):
+        """
+        Function for approving comments by an Administrator
+        """
         queryset.updated(approved=True)
+
 
 admin.site.register(Category)
