@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% block title %}{{ post.title_tag }} {% endblock%}
-
 {% block content %}
 
     <h1>{{ post.title }}</h1>
@@ -17,7 +16,15 @@
             {% endif %}
         {% endif %}
     </small>
-    {{ post.body | linebreaks}}
+
+        {{ post.body | safe }}
+        
+        {% if post.post_image.url %}
+            <img src=" {{ post.post_image.url }}" width="100%">
+        {% endif %}
+    <br>
+    <br>
+    </div>
     <a href="{% url 'home' %}" class="btn btn-secondary">Go Back!</a>
     <hr>
 

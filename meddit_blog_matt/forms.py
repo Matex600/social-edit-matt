@@ -1,6 +1,7 @@
 from django import forms
 from .models import Post, Category
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
+
 choices = Category.objects.all().values_list('name', 'name')
 
 choice_list = []
@@ -25,7 +26,6 @@ class AddPostForm(forms.ModelForm):
             'category': forms.Select(choices=choice_list, attrs={'class': 'form-control'}),
             'body': SummernoteWidget(attrs={'class': 'form-control'}),
             'blog_snippet': forms.Textarea(attrs={'class': 'form-control'}),
-            'post_image': forms.ClearableFileInput(attrs={'class': 'form-control'}),
         }
 
 
