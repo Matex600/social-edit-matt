@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Create a new blog post!{% endblock%}
+{% block title %}Edit blog post!{% endblock%}
 
 {% block content %}
 
@@ -12,6 +12,7 @@
         <form method="POST">
         {% csrf_token %}
         {{ form.as_p}}
+        {{ body | safe }}
         <button class="btn btn-success">Update!</button>
     </div>
     {% endif %}
