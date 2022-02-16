@@ -12,8 +12,9 @@
             {{ post.title }}</a>
         - <a href="{% url 'category' post.category|slugify %}">{{ post.category}}</a> -
             {{ post.author.username }}
-            
-            {{ post.body | linebreaks | slice:":200"}} {{ post.date_created }}
+            {{ post.blog_snippet | linebreaks}}
+            {{ post.date_created }} <br>
+
             <small> <br/>
                 {% if user.is_authenticated %}
                     {% if user.id == post.author.id %}
@@ -24,7 +25,7 @@
                 {% endif %}
             </small>
         </li>
-
+        
 {% endfor %}
 </ul 
 
