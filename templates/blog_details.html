@@ -46,7 +46,11 @@
 <div class="card mb-3" style="max-width: 100vw;">
   <div class="row g-0">
     <div class="col-md-2">
+      {% if post.author.userprofile.user_image %}
       <img src="{{ post.author.userprofile.user_image.url }}" class="img-fluid rounded-start" alt="...">
+      {% else %}
+      <img src="https://res.cloudinary.com/matts-cloud/image/upload/v1645132362/mattuserimage_f5sydl.png" alt="...">
+      {% endif %}
     </div>
     <div class="col-md-10">
       <div class="card-body">
@@ -80,7 +84,7 @@
         {% endif %}
         </p>
         <p class="card-text">
-          {{ user.userprofile.user_bio}}
+          {{ user.author.userprofile.user_bio}}
         </p>
         <p class="card-text"><small class="text-muted">Last seen | {{ user.last_login }}</small></p>
       </div>
