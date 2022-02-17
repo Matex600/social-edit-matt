@@ -47,9 +47,9 @@
   <div class="row g-0">
     <div class="col-md-2">
       {% if post.author.userprofile.user_image %}
-      <img src="{{ post.author.userprofile.user_image.url }}" class="img-fluid rounded-start" alt="...">
+      <img src="{{ post.author.userprofile.user_image.url }}" class="img-fluid rounded-start" alt="User image">
       {% else %}
-      <img src="https://res.cloudinary.com/matts-cloud/image/upload/v1645132362/mattuserimage_f5sydl.png" alt="...">
+      <img src="https://res.cloudinary.com/matts-cloud/image/upload/v1645132362/mattuserimage_f5sydl.png" alt="Placeholder user image">
       {% endif %}
     </div>
     <div class="col-md-10">
@@ -58,6 +58,11 @@
           {{ post.author|title }}
         </h5>
         <p class="small text-muted"></p>
+
+
+        <a href="{% url 'show_profile' post.author.userprofile.id %}" target="_blank" rel="noopener">
+          User Profile</a> |
+
         {% if post.author.userprofile.github_url %}
         <a href="{{ post.author.userprofile.github_url }}" target="_blank" rel="noopener">
           Github</a> |
@@ -84,8 +89,9 @@
         {% endif %}
         </p>
         <p class="card-text">
-          {{ user.author.userprofile.user_bio}}
+          {{ post.author.userprofile.user_bio}}
         </p>
+
         <p class="card-text"><small class="text-muted">Last seen | {{ user.last_login }}</small></p>
       </div>
     </div>
