@@ -2,48 +2,91 @@
 {% block title %}{{ post.title_tag }} {% endblock%}
 {% block content %}
 
-    <h1>{{ post.title }}</h1>
-    <small>By: 
-        {{post.author.username}}
-        {{post.date_created}} 
+<h1>{{ post.title }}</h1>
+<small>By:
+  {{post.author.username}}
+  {{post.date_created}}
 
-        {% if user.is_authenticated %}
-            {% if user.id == post.author.id %}
-            <a href="{% url 'edit_post' post.pk  %}">Edit</a> 
-            
-            <a href="{% url 'delete_post' post.pk  %}">Delete</a>
-            <hr>
-            {% endif %}
-        {% endif %}
-    </small>
+  {% if user.is_authenticated %}
+  {% if user.id == post.author.id %}
+  <a href="{% url 'edit_post' post.pk  %}">Edit</a>
 
-        {{ post.body | safe }}
-        
-        {% if post.post_image.url %}
-            <img src=" {{ post.post_image.url }}" width="100%">
-        {% endif %}
-    <br>
-    <br>
+  <a href="{% url 'delete_post' post.pk  %}">Delete</a>
+  <hr>
+  {% endif %}
+  {% endif %}
+</small>
+
+{{ post.body | safe }}
+
+{% if post.post_image.url %}
+<img src=" {{ post.post_image.url }}" width="200" height="200">
+{% endif %}
+<br>
+<br>
+</div>
+<a href="{% url 'home' %}" class="btn btn-secondary">Go Back!</a>
+<hr>
+
+
+<form action="{% url 'up_vote_post' post.pk %}" method="POST">
+  {% csrf_token %}
+
+  {% if user in post.likes.all %}
+  <button type="submit" , name="post_id" , value="{{ post.id }}" , class="btn btn-danger btn-sm">Downvote</button>
+
+  {% else %}
+  <button type="submit" , name="post_id" , value="{{ post.id }}" , class="btn btn-success btn-sm">Upvote</button>
+
+  {% endif %}
+  - {{ number_of_likes }} - votes
+</form>
+<br>
+<br>
+<div class="card mb-3" style="max-width: 100vw;">
+  <div class="row g-0">
+    <div class="col-md-2">
+      <img src="{{ post.author.userprofile.user_image.url }}" class="img-fluid rounded-start" alt="...">
     </div>
-    <a href="{% url 'home' %}" class="btn btn-secondary">Go Back!</a>
-    <hr>
+    <div class="col-md-10">
+      <div class="card-body">
+        <h5 class="card-title">
+          {{ post.author|title }}
+        </h5>
+        <p class="small text-muted"></p>
+        {% if post.author.userprofile.github_url %}
+        <a href="{{ post.author.userprofile.github_url }}" target="_blank" rel="noopener">
+          Github</a> |
+        {% endif %}
 
+        {% if post.author.userprofile.linkedin_url %}
+        <a href="{{ post.author.userprofile.linkedin_url }}" target="_blank" rel="noopener">
+          Linkedin</a> |
+        {% endif %}
 
-    <form action="{% url 'up_vote_post' post.pk %}"
-     method="POST">
-        {% csrf_token %}
+        {% if post.author.userprofile.twitter_url %}
+        <a href="{{ post.author.userprofile.twitter_url }}" target="_blank" rel="noopener">
+          Twitter</a> |
+        {% endif %}
 
-            {% if user in post.likes.all %}
-                <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Downvote</button>
+        {% if post.author.userprofile.facebook_url %}
+        <a href="{{ post.author.userprofile.facebook_url }}" target="_blank" rel="noopener">
+          Facebook</a> |
+        {% endif %}
 
-            {% else %}
-                <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-success btn-sm">Upvote</button>
-
-            {% endif %}
-    - {{ number_of_likes }} - votes
-    </form>
-    <br>
-
+        {% if post.author.userprofile.instagram_url %}
+        <a href="{{ post.author.userprofile.instagram_url }}" target="_blank" rel="noopener">
+          Instagram</a>
+        {% endif %}
+        </p>
+        <p class="card-text">
+          {{ user.userprofile.user_bio}}
+        </p>
+        <p class="card-text"><small class="text-muted">Last seen | {{ user.last_login }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 {% endblock %}
