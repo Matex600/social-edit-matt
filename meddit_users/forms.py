@@ -37,8 +37,8 @@ class EditUserForm(UserChangeForm):
     first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
     last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
     username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    last_login = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    date_joined = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    last_login = forms.CharField(disabled=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    date_joined = forms.CharField(disabled=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
     is_superuser = None
     is_staff = None
     is_active = None
