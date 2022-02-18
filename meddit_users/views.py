@@ -4,7 +4,7 @@ from django.views.generic import DetailView, CreateView
 from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy
 from meddit_users.models import UserProfile
-from .forms import RegisterForm, EditUserForm, PasswordUpdatingForm
+from .forms import RegisterForm, EditUserForm, PasswordUpdatingForm, ProfileForm
 
 
 class CreateProfilePageView(CreateView):  # pylint: disable=too-many-ancestors
@@ -12,8 +12,8 @@ class CreateProfilePageView(CreateView):  # pylint: disable=too-many-ancestors
     View for creating user profile
     """
     model = UserProfile
+    form_class = ProfileForm
     template_name = 'registration/create_user_profile.html'
-    fields = '__all__'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
