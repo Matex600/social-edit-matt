@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Edit Profile Page{% endblock%}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    {% if user.id == userprofile.user.id %}
+        <br/>
+        <h1>Edit Profile Page</h1>
+        <br/>
+        <div class="mb-3">
+            <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p}}
+            {{ body | safe }}
+            <button class="btn btn-success">Update Profile</button>
+        </div>
+    {% else %}
+    You are the incorrect user
+    <a href="{% url 'home' %}" class="btn btn-info">Take me Back</a>
+    {% endif %}
+{% else %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<div class="page-wrap d-flex flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <span class="display-1 d-block">403</span>
+                <div class="mb-4 lead">The page you are trying to reach is forbidden for reasons we can't disclose.</div>
+                <a href="{% url 'home' %}" class="btn btn-info">Take me Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+{% endblock %}
