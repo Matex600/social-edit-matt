@@ -1,7 +1,28 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User
 from django import forms
+from .models import UserProfile
 
+
+class ProfileForm(forms.ModelForm):
+    """
+    Form used to display fields for creating user profile
+    """
+    class Meta:
+        """
+        Adding widgets to determine input and style classes
+        """
+        model = UserProfile
+        fields = ('user_bio', 'user_image', 'github_url', 'linkedin_url', 'facebook_url', 'twitter_url', 'instagram_url' )
+        widgets = {
+            'user_bio': forms.Textarea(attrs={'class': 'form-control'}),
+            'user_image': forms.TextInput(attrs={'class': 'form-control'}),
+            'github_url': forms.TextInput(attrs={'class': 'form-control'}),
+            'linkedin_url': forms.TextInput(attrs={'class': 'form-control'}),
+            'facebook_url': forms.TextInput(attrs={'class': 'form-control'}),
+            'twitter_url': forms.TextInput(attrs={'class': 'form-control'}),
+            'instagram_url': forms.TextInput(attrs={'class': 'form-control'}),
+        }
 
 class RegisterForm(UserCreationForm):
     """
