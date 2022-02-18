@@ -1,20 +1,25 @@
 {% extends 'base.html' %}
-{% block title %} Edit User Profile {% endblock%}
+{% block title %} Update User Settings {% endblock %}
 
 {% block content %}
-<br/>
-<h1>Update Profile!</h1>
 
-<br/>
+<br />
+<h1>Update Settings</h1>
+
+{% if user.is_authenticated %}
+
+<br />
 <div class="mb-3">
-    <form method="POST">
-    {% csrf_token %}
-    {{ form.as_p}}
-    <button class="btn btn-success">Register</button>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button class="btn btn-success">Update Settings</button>
 </div>
 
+{% else %}
 
+You are not supposed to be here !
 
-
+{% endif %}
 
 {% endblock %}
