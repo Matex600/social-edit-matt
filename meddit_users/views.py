@@ -6,6 +6,15 @@ from django.urls import reverse_lazy
 from meddit_users.models import UserProfile
 from .forms import RegisterForm, EditUserForm, PasswordUpdatingForm
 
+class UpdateProfileView(generic.UpdateView):
+    """
+    View to display edit profile page template
+    """
+    model = UserProfile
+    template_name = 'registration/update_profile_page.html'
+    fields = ['user_bio', 'user_image', 'github_url', 'linkedin_url', 'facebook_url', 'twitter_url', 'instagram_url']
+    success_url = reverse_lazy('home')
+
 
 
 class UserProfilePageView(DetailView):
