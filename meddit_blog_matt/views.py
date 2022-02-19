@@ -3,8 +3,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
-from .models import Post, Category
-from .forms import AddPostForm, EditPostForm
+from .models import Post, Category, Comment
+from .forms import AddPostForm, EditPostForm, AddCommentForm
 
 
 class MainView(ListView):
@@ -73,6 +73,23 @@ class AddPostView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+class AddCommentView(LoginRequiredMixin, CreateView):
+    """
+    View for add_blog_post.html PLACEHOLDER
+    """
+    model = Comment
+    form_class = AddCommentForm
+    template_name = 'add_comment.html'
+
+    def get_success_url(self):
+        return reverse_lazy('blog_details', kwargs={'pk': self.kwargs['pk']})
+    
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        form.instance.name = self.request.user.username
         return super().form_valid(form)
 
 
