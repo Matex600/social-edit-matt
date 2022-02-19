@@ -57,7 +57,7 @@ class Comment(models.Model):
     name = models.CharField(max_length=125)
     content = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
+    approved = models.BooleanField('approved', default=False)
 
     class Meta:
         """
