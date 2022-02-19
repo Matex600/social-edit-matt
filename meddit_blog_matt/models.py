@@ -61,12 +61,12 @@ class Comment(models.Model):
 
     class Meta:
         """
-        Shows order of comments 
+        Shows order of comments
         """
         ordering = ['date_created']
 
     def __str__(self):
-        return '%s - %s' % (self.post.title, self.name)
+        return f"Comment {self.content} by {self.name}"
 
 
 class Category(models.Model):
@@ -76,6 +76,9 @@ class Category(models.Model):
     name = models.CharField(max_length=255)
 
     class Meta:
+        """
+        Change categoys to Categories using class meta 
+        """
         verbose_name_plural = "Categories"
 
     def __str__(self):
