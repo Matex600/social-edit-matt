@@ -30,22 +30,27 @@
 
 
 <form action="{% url 'up_vote_post' post.pk %}" method="POST">
-  {% csrf_token %}
+  {% if user.is_authenticated %}
+    {% csrf_token %}
 
-  {% if user in post.likes.all %}
-  <button type="submit" , name="post_id" , value="{{ post.id }}" , class="btn btn-danger btn-sm">Downvote</button>
+    {% if user in post.likes.all %}
+    <button type="submit" , name="post_id" , value="{{ post.id }}" , class="btn btn-danger btn-sm">Downvote</button>
 
+    {% else %}
+    <button type="submit" , name="post_id" , value="{{ post.id }}" , class="btn btn-success btn-sm">Upvote</button>
+
+    {% endif %}
   {% else %}
-  <button type="submit" , name="post_id" , value="{{ post.id }}" , class="btn btn-success btn-sm">Upvote</button>
-
+    <small> Login to like post! </small>
   {% endif %}
   - {{ number_of_likes }} - votes
 </form>
 <br><br>
 <h2>Comments</h2>
 {% if not post.comments.all %}
-    There are no comments on this post! <a href="#">Add comment</a>
+    There are no comments on this post! <a href="{% url 'add_comment' post.pk %}">Add comment</a>
 {% else %}
+<a href="{% url 'add_comment' post.pk %}">Add comment</a>
     {% for comment in post.comments.all %}
     {% if comment.approved %}
       <strong>
