@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Share your thoughts{% endblock%}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <br/>
+    <h1>Share your comment</h1>
+    <br/>
+    <div class="mb-3">
+        <form method="POST" >
+        {% csrf_token %}
+        {{ form.as_p}}
+        {{ body | safe }}
+        <button class="btn btn-success">Go!</button>
+    </div>
+{% endif %}
+
+
+{% endblock %}
