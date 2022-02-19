@@ -41,8 +41,26 @@
   {% endif %}
   - {{ number_of_likes }} - votes
 </form>
-<br>
-<br>
+<br><br>
+<h2>Comments</h2>
+{% if not post.comments.all %}
+    There are no comments on this post! <a href="#">Add comment</a>
+{% else %}
+    {% for comment in post.comments.all %}
+    {% if comment.approved %}
+      <strong>
+        <br>
+          {{ comment.name }}
+          {{ comment.date_created }}
+      </strong>
+      <br>
+          {{ comment.content }}
+    {% endif %}
+    {% endfor %}
+{% endif %}
+<br><br>
+
+<br><br>
 <div class="card mb-3" style="max-width: 100vw;">
   <div class="row g-0">
     <div class="col-md-2">
