@@ -54,17 +54,19 @@ class Comment(models.Model):
     """
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name='comments')
-    name = models.CharField(max_length=80)
-    email = models.EmailField()
+    name = models.CharField(max_length=125)
     content = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
     class Meta:
+        """
+        Shows order of comments 
+        """
         ordering = ['date_created']
 
     def __str__(self):
-        return f"Comment {self.content} by {self.name}"
+        return '%s - %s' % (self.post.title, self.name)
 
 
 class Category(models.Model):
