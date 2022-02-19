@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, Category
+from .models import Post, Category, Comment
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 choices = Category.objects.all().values_list('name', 'name')
@@ -53,4 +53,21 @@ class EditPostForm(forms.ModelForm):
             'category': forms.Select(choices=choice_list, attrs={'class': 'form-control'}),
             'body': SummernoteWidget(attrs={'class': 'form-control'}),
             'blog_snippet': forms.Textarea(attrs={'class': 'form-control'}),
+        }
+
+
+class AddCommentForm(forms.ModelForm):
+    """
+    Class that uses bootstrap classes to style fields
+    Populates fields when editing fields
+    """
+    class Meta:
+        """
+        Form class for my create post functionality PLACEHOLDER
+        """
+        model = Comment
+        fields = ('name', 'content')
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'content': forms.Textarea(attrs={'class': 'form-control'}),
         }
