@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponseRedirect
 from .models import Post, Category, Comment
 from .forms import AddPostForm, EditPostForm, AddCommentForm
 
@@ -52,7 +51,6 @@ def like_view(request, pk):
     View for individual pages for each post PLACEHOLDER
     """
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
-    liked = False
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
         liked = False
@@ -60,8 +58,6 @@ def like_view(request, pk):
         post.likes.add(request.user)
         liked = True
         
-    return HttpResponseRedirect(reverse('blog-detail', args=[str(pk)]))
-
 
 class AddPostView(LoginRequiredMixin, CreateView):
     """
@@ -85,12 +81,7 @@ class AddCommentView(LoginRequiredMixin, CreateView):
     template_name = 'add_comment.html'
 
     def get_success_url(self):
-        return reverse_lazy('blog_details', kwargs={'pk': self.kwargs['pk']})
-    
-    def form_valid(self, form):
-        form.instance.post_id = self.kwargs['pk']
-        form.instance.name = self.request.user.username
-        return super().form_valid(form)
+        return reverse_lazy('blog-detail', kwargs={'pk': self.kwargs['pk']})
 
 
 def category_list_view(request):
