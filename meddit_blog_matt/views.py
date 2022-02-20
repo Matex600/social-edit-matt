@@ -100,6 +100,18 @@ def category_view(request, cate):
     return render(request, 'categories.html', {'cate': cate.title().replace('-', ' '), 'category_posts': category_posts})
 
 
+def results_view(request):
+    """
+    Search Bar view
+    """
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        posts = Post.objects.filter(title__contains=searched)
+        return render(request, 'search_results.html', {'searched': searched, 'posts': posts})
+    else:
+        return render(request,  {})
+
+
 class AddCategoryView(CreateView):
     """
     View for add_blog_post.html PLACEHOLDER
