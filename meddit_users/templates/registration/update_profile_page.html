@@ -6,14 +6,13 @@
 {% if user.is_authenticated %}
     {% if user.id == userprofile.user.id %}
         <br/>
-        <h1>Edit Profile Page</h1>
+        <h1>Edit Profile</h1>
         <br/>
-        <div class="mb-3">
+        <div class="mb-3 form">
             <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p}}
-            {{ body | safe }}
-            <button class="btn btn-success">Update Profile</button>
+            <button class="btn btn-secondary">Update Profile</button>
         </div>
     {% else %}
     You are the incorrect user

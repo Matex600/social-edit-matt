@@ -25,8 +25,8 @@ class UpdateProfileView(generic.UpdateView):  # pylint: disable=too-many-ancesto
     View to display edit profile page template
     """
     model = UserProfile
+    form_class = ProfileForm
     template_name = 'registration/update_profile_page.html'
-    fields = ['user_bio', 'user_image', 'github_url', 'linkedin_url', 'facebook_url', 'twitter_url', 'instagram_url']
     success_url = reverse_lazy('home')
 
 

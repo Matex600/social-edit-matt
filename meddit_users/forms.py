@@ -16,7 +16,6 @@ class ProfileForm(forms.ModelForm):
         fields = ('user_bio', 'user_image', 'github_url', 'linkedin_url', 'facebook_url', 'twitter_url', 'instagram_url' )
         widgets = {
             'user_bio': forms.Textarea(attrs={'class': 'form-control'}),
-            'user_image': forms.TextInput(attrs={'class': 'form-control'}),
             'github_url': forms.TextInput(attrs={'class': 'form-control'}),
             'linkedin_url': forms.TextInput(attrs={'class': 'form-control'}),
             'facebook_url': forms.TextInput(attrs={'class': 'form-control'}),
