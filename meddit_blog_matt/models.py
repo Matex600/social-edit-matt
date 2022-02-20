@@ -21,7 +21,8 @@ class Post(models.Model):
     Creating Post
     """
     title = models.CharField(max_length=260)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='blog_posts')
     body = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
@@ -29,7 +30,8 @@ class Post(models.Model):
     blog_snippet = models.CharField(max_length=255)
     post_image = CloudinaryField('image', null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
-    likes = models.ManyToManyField(User, related_name='blog_upvote', blank=True)
+    likes = models.ManyToManyField(
+        User, related_name='blog_upvote', blank=True)
 
     def __str__(self):
         return f"{self.title} | {self.author}"
@@ -52,9 +54,8 @@ class Comment(models.Model):
     Class representing comment model
     that have to be approved by an admin
     """
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,
-                             related_name='comments')
-    name = models.CharField(max_length=125)
+    post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
     content = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField('approved', default=False)
@@ -64,6 +65,7 @@ class Comment(models.Model):
         Shows order of comments
         """
         ordering = ['-date_created']
+
 
     def __str__(self):
         return f"Comment {self.content} by {self.name}"
