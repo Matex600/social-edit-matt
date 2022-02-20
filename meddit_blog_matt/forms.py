@@ -36,7 +36,6 @@ class SummernoteForm(forms.Form):
     summer = forms.CharField(widget=SummernoteInplaceWidget())
 
 
-
 class EditPostForm(forms.ModelForm):
     """
     Class that uses bootstrap classes to style fields
@@ -66,8 +65,7 @@ class AddCommentForm(forms.ModelForm):
         Form class for my create post functionality PLACEHOLDER
         """
         model = Comment
-        fields = ('name', 'content')
+        fields = ('content',)
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
         }
