@@ -33,6 +33,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
                     {% if cate_menu %}
                     <!-- Category Menu -->
                     <li class="nav-item dropdown">
@@ -76,12 +77,12 @@
                 {% if user.is_authenticated %}
                 <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle me-2" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             {{ user.username|title }}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'update_profile' %}">Edit Settings</a>
+                            <a class="dropdown-item " href="{% url 'update_profile' %}">Edit Settings</a>
                             {% if user.userprofile.id %}
                             <a class="dropdown-item" href="{% url 'edit_profile' user.userprofile.id %}">Edit
                                 Profile</a>
@@ -94,6 +95,11 @@
                         </ul>
                     </li>
                 </ul>
+                <form class="d-flex" method="POST" action="{% url 'search_results' %}">
+                    {% csrf_token %}
+                    <input class="form-control me-2" type="search" placeholder="Look for a Post" aria-label="Search" name="searched">
+                    <button class="btn btn-secondary" type="submit">Search</button>
+                </form>
                 {% endif %}
             </div>
         </div>
