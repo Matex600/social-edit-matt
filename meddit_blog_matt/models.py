@@ -63,7 +63,7 @@ class Comment(models.Model):
         """
         Shows order of comments
         """
-        ordering = ['date_created']
+        ordering = ['-date_created']
 
     def __str__(self):
         return f"Comment {self.content} by {self.name}"
