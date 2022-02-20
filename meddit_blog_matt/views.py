@@ -60,7 +60,7 @@ def like_view(request, pk):
         liked = True
 
     return HttpResponseRedirect(reverse('blog-detail', args=[str(pk)]))
-        
+
 
 class AddPostView(LoginRequiredMixin, CreateView):
     """
@@ -82,6 +82,11 @@ class AddCommentView(LoginRequiredMixin, CreateView):
     model = Comment
     form_class = AddCommentForm
     template_name = 'add_comment.html'
+
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        form.instance.name = self.request.user.username
+        return super().form_valid(form)
 
     def get_success_url(self):
         return reverse_lazy('blog-detail', kwargs={'pk': self.kwargs['pk']})
@@ -119,7 +124,7 @@ class AddCategoryView(CreateView):
     """
     View for add_blog_post.html PLACEHOLDER
     """
-    model = Category  
+    model = Category
     template_name = 'add_category.html'
     fields = '__all__'
 
@@ -168,4 +173,3 @@ def handler500(request, *args, **argv):
     Handler for internal server error generic message 500
     """
     return render(request, "500.html", status=500)
-
