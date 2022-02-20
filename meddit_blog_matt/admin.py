@@ -22,6 +22,9 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'content', 'post', 'date_created', 'approved')
     list_filter = ('approved', 'date_created')
     search_fields = ('name', 'content')
-
+    actions = ['approve_comments']
+    
+    def approve_comments(self, request, queryset):
+        queryset.update(approved=True)
 
 admin.site.register(Category)
