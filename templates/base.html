@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark nav-custom">
+    <nav class="navbar navbar-expand-lg navbar-dark nav-custom li a m-1">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><img class="img-fluid img-thumbnail"
                     src="https://res.cloudinary.com/matts-cloud/image/upload/v1645051610/favicon_fb1v0h.ico"
@@ -41,7 +41,7 @@
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Categories
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
 
                             {% for item in cate_menu %}
                             <li><a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }}</a></li>
@@ -52,7 +52,7 @@
                     {% else %}
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'category-list' %}">Categories</a>
+                        <a class="nav-link text-color-nav li a" href="{% url 'category-list' %}">Categories</a>
                     </li>
 
                     {% endif %}
@@ -81,8 +81,8 @@
                             data-bs-toggle="dropdown" aria-expanded="false">
                             {{ user.username|title }}
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item " href="{% url 'update_profile' %}">Edit Settings</a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'update_profile' %}">Edit Settings</a>
                             {% if user.userprofile.id %}
                             <a class="dropdown-item" href="{% url 'edit_profile' user.userprofile.id %}">Edit
                                 Profile</a>
@@ -91,16 +91,17 @@
                             <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                             {% else %}
                             <a class="dropdown-item" href="{% url 'create_profile' %}">Create Profile</a>
+                            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                             {% endif %}
                         </ul>
                     </li>
                 </ul>
+                {% endif %}
                 <form class="d-flex" method="POST" action="{% url 'search_results' %}">
                     {% csrf_token %}
                     <input class="form-control me-2" type="search" placeholder="Look for a Post" aria-label="Search" name="searched">
                     <button class="btn btn-secondary" type="submit">Search</button>
                 </form>
-                {% endif %}
             </div>
         </div>
     </nav>

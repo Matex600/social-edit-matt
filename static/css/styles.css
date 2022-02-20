@@ -2,6 +2,14 @@
    background-color: #221f1f;
 }
 
+.navbar.navbar-expand-lg.navbar-dark.nav-custom li a {
+   color: #FFFFFF;
+}
+
+.navbar.navbar-expand-lg.navbar-dark.nav-custom li a:hover {
+   color: #ffff01;
+}
+
 .img-fluid {
    height: 100%;
 }
