@@ -21,3 +21,21 @@ body {
 .bg-dark {
    background-color: #221f1f;
 }
+
+.card-header { 
+   background-color: #221f1f;
+}
+
+.btn {
+   border: 1px solid #000000;
+   
+}
+
+.center-div {
+   margin: auto;
+   text-align: center;
+}
+
+.btn:hover {
+   border: 1.5px solid #221f1f;
+}
