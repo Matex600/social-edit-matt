@@ -11,7 +11,7 @@
         <li><a href="{% url 'blog-detail' post.pk  %}">
             {{ post.title }}</a>
         - <a href="{% url 'category' post.category|slugify %}">{{ post.category}}</a> -
-            {{ post.author.username }}
+            {{ post.author.username | title }}
             {{ post.blog_snippet | linebreaks}}
             {{ post.date_created }} <br>
 
