@@ -13,7 +13,7 @@
         <li><a href="{% url 'blog-detail' post.pk  %}">
             {{ post.title }}</a>
             {{ post.author.username}}
-            {{ post.body | linebreaks | slice:":200"}} {{ post.date_created }}
+            {{ post.body | safe }} {{ post.date_created }}
             <small> <br/>
                 {% if user.is_authenticated %}
                     {% if user.id == post.author.id %}
