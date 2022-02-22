@@ -1,4 +1,5 @@
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
+from django.contrib.auth.forms import (UserCreationForm, UserChangeForm,
+                                       PasswordChangeForm)
 from django.contrib.auth.models import User
 from django import forms
 from .models import UserProfile
@@ -13,7 +14,8 @@ class ProfileForm(forms.ModelForm):
         Adding widgets to determine input and style classes
         """
         model = UserProfile
-        fields = ('user_bio', 'user_image', 'github_url', 'linkedin_url', 'facebook_url', 'twitter_url', 'instagram_url' )
+        fields = ('user_bio', 'user_image', 'github_url', 'linkedin_url',
+                  'facebook_url', 'twitter_url', 'instagram_url')
         widgets = {
             'user_bio': forms.Textarea(attrs={'class': 'form-control'}),
             'github_url': forms.TextInput(attrs={'class': 'form-control'}),
@@ -23,13 +25,13 @@ class ProfileForm(forms.ModelForm):
             'instagram_url': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
+
 class RegisterForm(UserCreationForm):
     """
     Form used to style fields for registering a user to the blog page
     """
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
-    # first_name = forms.CharField(max_length=80, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    # last_name = forms.CharField(max_length=80, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    email = forms.EmailField(widget=forms.
+                             EmailInput(attrs={'class': 'form-control'}))
 
     class Meta:
         """
@@ -56,12 +58,23 @@ class EditUserForm(UserChangeForm):
     """
     Form used to display fields for editing a user profile
     """
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
-    first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    last_login = forms.CharField(disabled=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    date_joined = forms.CharField(disabled=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    email = forms.EmailField(widget=forms.
+                             EmailInput(attrs={'class': 'form-control'}))
+    first_name = forms.CharField(max_length=100,
+                                 widget=forms.
+                                 TextInput(attrs={'class': 'form-control'}))
+    last_name = forms.CharField(max_length=100,
+                                widget=forms.
+                                TextInput(attrs={'class': 'form-control'}))
+    username = forms.CharField(max_length=100,
+                               widget=forms.
+                               TextInput(attrs={'class': 'form-control'}))
+    last_login = forms.CharField(disabled=True,
+                                 widget=forms.
+                                 TextInput(attrs={'class': 'form-control'}))
+    date_joined = forms.CharField(disabled=True,
+                                  widget=forms.
+                                  TextInput(attrs={'class': 'form-control'}))
     is_superuser = None
     is_staff = None
     is_active = None
@@ -72,16 +85,26 @@ class EditUserForm(UserChangeForm):
         Display fields for editing user profile
         """
         model = User
-        fields = ('username', 'first_name', 'last_name', 'date_joined', 'last_login')
+        fields = ('username', 'first_name', 'last_name',
+                  'date_joined', 'last_login')
 
 
 class PasswordUpdatingForm(PasswordChangeForm):
     """
     Form used to style fields for registering a user to the blog page
     """
-    old_password = forms.CharField(label='Old Password', widget=forms.PasswordInput(attrs={'class': 'form-control', 'type':'password'}))
-    new_password1 = forms.CharField(label='New Password', widget=forms.PasswordInput(attrs={'class': 'form-control', 'type':'password'}))
-    new_password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(attrs={'class': 'form-control', 'type':'password'}))
+    old_password = forms.CharField(label='Old Password',
+                                   widget=forms.PasswordInput
+                                   (attrs={'class': 'form-control',
+                                           'type': 'password'}))
+    new_password1 = forms.CharField(label='New Password',
+                                    widget=forms.PasswordInput
+                                    (attrs={'class': 'form-control',
+                                            'type': 'password'}))
+    new_password2 = forms.CharField(label='Confirm Password',
+                                    widget=forms.PasswordInput
+                                    (attrs={'class': 'form-control',
+                                            'type': 'password'}))
 
     class Meta:
         """

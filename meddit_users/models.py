@@ -16,7 +16,7 @@ class UserProfile(models.Model):
     facebook_url = models.CharField(max_length=225, null=True, blank=True)
     twitter_url = models.CharField(max_length=225, null=True, blank=True)
     instagram_url = models.CharField(max_length=225, null=True, blank=True)
-    
+
     def __str__(self):
         return f"{self.user}"
 
