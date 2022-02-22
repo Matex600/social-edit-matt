@@ -75,4 +75,9 @@ body {
    overflow-y: scroll;
 }
 
+.list-group-item.list-group-item-dark.m-4 a{
+   color: #000000;
+}
+
+
 

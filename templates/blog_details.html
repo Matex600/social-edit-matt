@@ -52,9 +52,8 @@
 </div>
 <hr>
 
-
-<div class="container comment-wrapper">
 <h2>Comments:</h2>
+<div class="container comment-wrapper">
 {% if not post.comments.all %}
 There are no comments on this post! <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add comment</a>
 {% else %}

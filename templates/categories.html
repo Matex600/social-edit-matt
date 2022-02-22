@@ -6,25 +6,18 @@
 
 {% if category_posts %}
 
-    <h1>{{ cate }}</h1>
+<h1>{{ cate }}</h1>
 
-    <ul>
+<ul>
     {% for post in category_posts %}
-        <li><a href="{% url 'blog-detail' post.pk  %}">
-            {{ post.title }}</a>
-            {{ post.author.username}}
-            {{ post.body | safe }} {{ post.date_created }}
-            <small> <br/>
-                {% if user.is_authenticated %}
-                    {% if user.id == post.author.id %}
-                    <a class="btn btn-dark" href="{% url 'edit_post' post.pk  %}">Edit</a>
-                
-                    <a class="btn btn-danger" href="{% url 'delete_post' post.pk  %}">Delete</a>
-                    {% endif %}
-                {% endif %}
-            </small>
+    <li class="list-group-item list-group-item-dark m-4"><strong><a href="{% url 'blog-detail' post.pk  %}">
+            {{ post.title | title }} </a></strong> :
+        <p>{{ post.author.username | title }} |
+        {{ post.blog_snippet | safe }} {{ post.date_created }}</p>
+        
+
     </li>
     {% endfor %}
-    </ul>
+</ul>
 {% endif%}
 {% endblock %}
