@@ -22,7 +22,8 @@
   <div class="card mb-3">
     <div class="card-body">
       <p class="card-text">{{ post.body | safe }}</p>
-      <p class="card-text"><small class="text-muted">Updated on | {{ post.updated_on }}</small></p>
+      <hr>
+      <p class="card-text h6">Updated on | {{ post.updated_on }}</p>
     </div>
     <div class="image-container">
       {% if post.post_image.url %}
@@ -52,29 +53,28 @@
 <hr>
 
 
-
+<div class="container comment-wrapper">
 <h2>Comments:</h2>
 {% if not post.comments.all %}
 There are no comments on this post! <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add comment</a>
 {% else %}
-<div class="container">
-  <div class="row row-cols-auto justify-content-center">
-    {% for comment in post.comments.all %}
-    {% if comment.approved %}
-    <div class="col">
-      <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-        <div class="card-header">Posted | {{ comment.name|title }}</div>
-        <div class="card-body">
-          <p class="card-text"> {{ comment.content }}</p>
-          {{ comment.date_created }}
-        </div>
-        <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add a new comment</a>
+<div class="row row-cols-auto justify-content-center">
+  {% for comment in post.comments.all %}
+  {% if comment.approved %}
+  <div class="col">
+    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+      <div class="card-header">Posted | {{ comment.name|title }}</div>
+      <div class="card-body">
+        <p class="card-text"> {{ comment.content }}</p>
+        {{ comment.date_created }}
       </div>
+      <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add a new comment</a>
     </div>
-    {% endif %}
-    {% endfor %}
   </div>
   {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
 </div>
 
 <hr>
@@ -83,7 +83,7 @@ There are no comments on this post! <a href="{% url 'add_comment' post.pk %}" cl
 <div class="container">
   <div class="card mb-3">
     <div class="row no-gutters">
-      <div class="col">
+      <div class="col-xs- col-sm-4 col-md-2">
         {% if post.author.userprofile.user_image %}
         <img src="{{ post.author.userprofile.user_image.url }}" class="image" alt="User image">
         {% else %}
@@ -91,17 +91,17 @@ There are no comments on this post! <a href="{% url 'add_comment' post.pk %}" cl
           alt="Placeholder user image">
         {% endif %}
       </div>
-      <div class="col-md-10 card-body">
+      <div class="col-sm-8 col-md-10 card-body profile-card">
         <div class="card-body">
           <h5 class="card-title">
             {{ post.author|title }}
           </h5>
           <p class="small text-muted"></p>
 
-
-          <a href="{% url 'show_profile' user.id %}" target="_blank" rel="noopener">
+          {% if post.author.userprofile.id %}
+          <a href="{% url 'show_profile' post.author.userprofile.id %}" target="_blank" rel="noopener">
             User Profile</a> |
-
+          {% endif %}
 
           {% if post.author.userprofile.github_url %}
           <a href="{{ post.author.userprofile.github_url }}" target="_blank" rel="noopener">
