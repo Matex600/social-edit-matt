@@ -16,20 +16,20 @@
                 {% if post.post_image.url %}
                 <img src=" {{ post.post_image.url }}" class="card-img-top" alt="User Image">
                 {% else %}
-                <img src="https://res.cloudinary.com/matts-cloud/image/upload/v1645486109/android-chrome-192x192_l6qs7u.png"
-                alt="Placeholder user image">
+                <img
+                  src="https://res.cloudinary.com/matts-cloud/image/upload/v1645486109/android-chrome-192x192_l6qs7u.png"
+                  alt="Placeholder user image">
                 {% endif %}
-                <div class="image-flash">
-                  <p class="author"><a href="{% url 'blog-detail' post.pk  %}">
-                    {{ post.title|title }}</a> | <a href="{% url 'category' post.category|slugify %}">
-                      {{post.category|title}}</a> | {{ post.author.username | title }}</p>
-                </div>
               </div>
-                <h2 class="card-title">{{ post.title }}</h2>
-                <p class="card-text">{{ post.blog_snippet | safe}}</p>
+              <h2 class="card-title">
+                <p class="author"><a href="{% url 'blog-detail' post.pk  %}">
+                    {{ post.title|title }}</a></p>
+              </h2>
+              <p class="card-text">{{ post.blog_snippet | safe}}</p>
               </a>
               <hr />
-              <p class="card-text text-muted h6">{{ post.date_created }}</p>
+              <p class="card-text text-muted h5">{{ post.date_created }} | <a href="{% url 'category' post.category|slugify %}">
+                {{post.category|title}}</a> | {{ post.author.username | title }}</p>
               {% if user.is_authenticated %}
               {% if user.id == post.author.id %}
               <a class="btn btn-success" href="{% url 'edit_post' post.pk  %}">Edit</a>
@@ -38,25 +38,25 @@
               {% endif %}
             </div>
           </div>
-        {% endfor %}
+          {% endfor %}
+        </div>
+
       </div>
-      
     </div>
+
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-secondary">&laquo; PREV </a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-secondary"> NEXT &raquo;</a></li>
+
+        {% endif %}
+      </ul>
+    </nav>
+    {% endif %}
   </div>
 
-  {% if is_paginated %}
-  <nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
-      {% if page_obj.has_previous %}
-      <li><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-secondary">&laquo; PREV </a></li>
-      {% endif %}
-      {% if page_obj.has_next %}
-      <li><a href="?page={{ page_obj.next_page_number }}" class="btn btn-secondary"> NEXT &raquo;</a></li>
-
-      {% endif %}
-    </ul>
-  </nav>
-  {% endif %}
-</div>
-
-{% endblock %}
+  {% endblock %}

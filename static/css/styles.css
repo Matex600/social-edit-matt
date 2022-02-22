@@ -51,12 +51,15 @@ body {
    margin-right: auto;
 }
 .card-body {
-   background-color: #221f1f;
+   background-color: #494242;
    color: #FFFFFF;
 }
 
-.card-body a{
+.card-body.profile-card {
    background-color: #221f1f;
+}
+
+.card-body a{
    color: #FFFFFF;
 }
 
@@ -67,5 +70,3 @@ body {
 
 
 
-
-/* Media Queries */ 
