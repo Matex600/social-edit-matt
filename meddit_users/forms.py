@@ -28,15 +28,15 @@ class RegisterForm(UserCreationForm):
     Form used to style fields for registering a user to the blog page
     """
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
-    first_name = forms.CharField(max_length=80, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    last_name = forms.CharField(max_length=80, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # first_name = forms.CharField(max_length=80, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # last_name = forms.CharField(max_length=80, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     class Meta:
         """
         Display fields for registering user
         """
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
+        fields = ('username', 'email', 'password1', 'password2')
 
     def __init__(self, *args, **kwargs):
         """
@@ -47,6 +47,9 @@ class RegisterForm(UserCreationForm):
         self.fields['username'].widget.attrs['class'] = 'form-control'
         self.fields['password1'].widget.attrs['class'] = 'form-control'
         self.fields['password2'].widget.attrs['class'] = 'form-control'
+
+        for fieldname in ['username', 'password1', 'password2']:
+            self.fields[fieldname].help_text = None
 
 
 class EditUserForm(UserChangeForm):
