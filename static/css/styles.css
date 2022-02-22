@@ -68,5 +68,11 @@ body {
    color: #ffff01;
 }
 
+.comment-wrapper {
+   max-height: 25vh;
+   max-width: 90%;
+   /* max-height: 50%; */
+   overflow-y: scroll;
+}
 
 
