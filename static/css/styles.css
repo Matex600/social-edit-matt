@@ -39,3 +39,33 @@ body {
 .btn:hover {
    border: 1.5px solid #221f1f;
 }
+
+.row>* {
+   padding-right: 0;
+}
+
+.image {
+   width: 200px;
+   height: 100%;
+   margin-left: auto;
+   margin-right: auto;
+}
+.card-body {
+   background-color: #221f1f;
+   color: #FFFFFF;
+}
+
+.card-body a{
+   background-color: #221f1f;
+   color: #FFFFFF;
+}
+
+.card-header.card-body a:hover {
+   background-color: #221f1f;
+   color: #ffff01;
+}
+
+
+
+
+/* Media Queries */ 
