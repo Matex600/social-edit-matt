@@ -1,5 +1,9 @@
+"""
+Django imports
+"""
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import (ListView, DetailView, CreateView,
+                                  UpdateView, DeleteView)
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -54,10 +58,9 @@ def like_view(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
-        liked = False
+
     else:
         post.likes.add(request.user)
-        liked = True
 
     return HttpResponseRedirect(reverse('blog-detail', args=[str(pk)]))
 
@@ -97,7 +100,8 @@ def category_list_view(request):
     View for add_blog_post.html PLACEHOLDER
     """
     cate_menu_list = Category.objects.all()
-    return render(request, 'category_list.html', {'cate_menu_list': cate_menu_list})
+    return render(request, 'category_list.html',
+                  {'cate_menu_list': cate_menu_list})
 
 
 def category_view(request, cate):
@@ -105,7 +109,9 @@ def category_view(request, cate):
     View for add_blog_post.html PLACEHOLDER
     """
     category_posts = Post.objects.filter(category=cate.replace('-', ' '))
-    return render(request, 'categories.html', {'cate': cate.title().replace('-', ' '), 'category_posts': category_posts})
+    return render(request, 'categories.html',
+                  {'cate': cate.title().replace('-', ' '),
+                   'category_posts': category_posts})
 
 
 def results_view(request):
@@ -113,11 +119,12 @@ def results_view(request):
     Search Bar view
     """
     if request.method == 'POST':
-        searched = request.POST['searched']
+        searched = request.POST.get('searched')
         posts = Post.objects.filter(title__contains=searched)
-        return render(request, 'search_results.html', {'searched': searched, 'posts': posts})
+        return render(request, 'search_results.html',
+                      {'searched': searched, 'posts': posts})
     else:
-        return render(request,  {})
+        return render(request, 'search_results.html', {})
 
 
 class AddCategoryView(CreateView):

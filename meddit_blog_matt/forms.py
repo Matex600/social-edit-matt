@@ -1,6 +1,6 @@
 from django import forms
 from .models import Post, Category, Comment
-from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
+
 
 choices = Category.objects.all().values_list('name', 'name')
 
@@ -20,10 +20,14 @@ class AddPostForm(forms.ModelForm):
         Form class for my create post functionality PLACEHOLDER
         """
         model = Post
-        fields = ('title', 'category', 'body', 'blog_snippet', 'post_image', 'status')
+        fields = ('title', 'category', 'body', 'blog_snippet',
+                  'post_image', 'status')
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Choose a blog title!'}),
-            'category': forms.Select(choices=choice_list, attrs={'class': 'form-control'}),
+            'title': forms.TextInput(attrs={'class': 'form-control',
+                                            'placeholder':
+                                            'Choose a blog title!'}),
+            'category': forms.Select(choices=choice_list,
+                                     attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
             'blog_snippet': forms.Textarea(attrs={'class': 'form-control'}),
         }
@@ -42,7 +46,8 @@ class EditPostForm(forms.ModelForm):
         fields = ('title', 'category', 'body', 'blog_snippet', 'status')
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'category': forms.Select(choices=choice_list, attrs={'class': 'form-control'}),
+            'category': forms.Select(choices=choice_list,
+                                     attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
             'blog_snippet': forms.Textarea(attrs={'class': 'form-control'}),
         }

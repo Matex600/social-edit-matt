@@ -38,7 +38,8 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         """
-        This fixes an error which the button on add blog post is not taking user back as expected.
+        This fixes an error which the button on add blog post
+        is not taking user back as expected.
         """
         return reverse('home')
 
@@ -54,7 +55,8 @@ class Comment(models.Model):
     Class representing comment model
     that have to be approved by an admin
     """
-    post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, related_name='comments',
+                             on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     content = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
@@ -65,7 +67,6 @@ class Comment(models.Model):
         Shows order of comments
         """
         ordering = ['-date_created']
-
 
     def __str__(self):
         return f"Comment {self.content} by {self.name}"
@@ -79,7 +80,7 @@ class Category(models.Model):
 
     class Meta:
         """
-        Change categoys to Categories using class meta 
+        Change categoys to Categories using class meta
         """
         verbose_name_plural = "Categories"
 
@@ -88,6 +89,7 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         """
-        This fixes an error which the button on add blog post is not taking user back as expected.
+        This fixes an error which the button on add blog post
+        is not taking user back as expected.
         """
         return reverse('home')
