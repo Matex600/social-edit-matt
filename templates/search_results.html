@@ -3,14 +3,18 @@
 {% block content %}
 
     {% if searched %}
-        <h1>Search Results: {{ searched }}</h1>
+        <h1>Search Results: {{ searched  }}</h1>
         {% for post in posts %}
-            <a href="{% url 'blog-detail' post.pk  %}">{{ post.title }}</a>
+        <h4><ul class="list-group-item list-group-item-dark m-4"><a class="dropdown-item" href="{% url 'blog-detail' post.pk  %}">{{ post.title }}</a></ul></h4>
+            
         {% endfor %}
     {% else %}
+    <div>
         <h1> You need to search for a post!</h1>
+    </div>
     {% endif %}
 
+    
 
 
 
