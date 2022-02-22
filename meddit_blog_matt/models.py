@@ -2,6 +2,7 @@
 Importing models from django
 User from Auth
 Cloudinary model
+Reverse Url.
 """
 from django.db import models
 from django.contrib.auth.models import User
@@ -17,8 +18,8 @@ STATUS = (
 class Post(models.Model):
     """
     A class to represent the model for posts in the blog
-    Detalis the functionality that will be present when
-    Creating Post
+    details and the functionality that will be present when
+    creating post.
     """
     title = models.CharField(max_length=260)
     author = models.ForeignKey(
@@ -45,7 +46,7 @@ class Post(models.Model):
 
     def number_of_likes(self):
         """
-        Method returns total number of likes on post
+        Method returns total number of likes on post.
         """
         return self.likes.count()
 
@@ -53,7 +54,7 @@ class Post(models.Model):
 class Comment(models.Model):
     """
     Class representing comment model
-    that have to be approved by an admin
+    that have to be approved by an admin.
     """
     post = models.ForeignKey(Post, related_name='comments',
                              on_delete=models.CASCADE)
@@ -64,7 +65,7 @@ class Comment(models.Model):
 
     class Meta:
         """
-        Shows order of comments
+        Shows order of comments.
         """
         ordering = ['-date_created']
 
@@ -74,13 +75,13 @@ class Comment(models.Model):
 
 class Category(models.Model):
     """
-    Class representing categories model
+    Class representing categories model.
     """
     name = models.CharField(max_length=255)
 
     class Meta:
         """
-        Change categoys to Categories using class meta
+        Change categorys to categories using class meta.
         """
         verbose_name_plural = "Categories"
 
@@ -89,7 +90,7 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         """
-        This fixes an error which the button on add blog post
+        This fixes an error which the button on add categories
         is not taking user back as expected.
         """
         return reverse('home')

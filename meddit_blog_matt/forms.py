@@ -12,12 +12,12 @@ for item in choices:
 
 class AddPostForm(forms.ModelForm):
     """
-    Class that uses bootstrap classes to style fields
-    Populates fields when creating post
+    Form for adding blog posts.
     """
     class Meta:
         """
-        Form class for my create post functionality PLACEHOLDER
+        Class that uses bootstrap classes to style fields and
+        Populate fields when creating a post.
         """
         model = Post
         fields = ('title', 'category', 'body', 'blog_snippet',
@@ -35,12 +35,12 @@ class AddPostForm(forms.ModelForm):
 
 class EditPostForm(forms.ModelForm):
     """
-    Class that uses bootstrap classes to style fields
-    Populates fields when editing fields
+    Form for editing blog posts.
     """
     class Meta:
         """
-        Form class for my create post functionality PLACEHOLDER
+        Class that uses bootstrap classes to style fields and
+        populate fields when editing fields in a post.
         """
         model = Post
         fields = ('title', 'category', 'body', 'blog_snippet', 'status')
@@ -55,12 +55,12 @@ class EditPostForm(forms.ModelForm):
 
 class AddCommentForm(forms.ModelForm):
     """
-    Class that uses bootstrap classes to style fields
-    Populates fields when editing fields
+    Form for adding comments for blog posts.
     """
     class Meta:
         """
-        Form class for my create post functionality PLACEHOLDER
+        Class that uses bootstrap classes to style comment field
+        and populate fields when editing comments.
         """
         model = Comment
         fields = ('content',)
