@@ -10,7 +10,7 @@ from .forms import (RegisterForm, EditUserForm,
 
 class CreateProfilePageView(CreateView):  # pylint: disable=too-many-ancestors
     """
-    View for creating user profile
+    View using form profileform to for creating user profile.
     """
     model = UserProfile
     form_class = ProfileForm
@@ -23,7 +23,7 @@ class CreateProfilePageView(CreateView):  # pylint: disable=too-many-ancestors
 
 class UpdateProfileView(generic.UpdateView):  # pylint: disable=too-many-ancestors
     """
-    View to display edit profile page template
+    View to displaying form in update profile template.
     """
     model = UserProfile
     form_class = ProfileForm
@@ -33,7 +33,7 @@ class UpdateProfileView(generic.UpdateView):  # pylint: disable=too-many-ancesto
 
 class UserProfilePageView(DetailView):
     """
-    View for displaying user profile page
+    View for displaying users profile using primary keys [pk].
     """
     model = UserProfile
     template_name = 'registration/user_profile.html'
@@ -47,7 +47,7 @@ class UserProfilePageView(DetailView):
 
 class UpdatePasswordsView(PasswordChangeView):  # pylint: disable=too-many-ancestors
     """
-    View for changing style when updating password
+    View for custom form to display updating user password.
     """
     form_class = PasswordUpdatingForm
     success_url = reverse_lazy('password_success')
@@ -55,14 +55,14 @@ class UpdatePasswordsView(PasswordChangeView):  # pylint: disable=too-many-ances
 
 def password_success(request):
     """
-    User taken to page once password is changed successfully
+    User returned to success page once they change password.
     """
     return render(request, 'registration/password_success.html', {})
 
 
 class UserRegisterView(generic.CreateView):  # pylint: disable=too-many-ancestors
     """
-    View for registering users using django forms
+    View for registering users using customised form.
     """
     form_class = RegisterForm
     template_name = 'registration/register.html'
@@ -71,7 +71,7 @@ class UserRegisterView(generic.CreateView):  # pylint: disable=too-many-ancestor
 
 class UserUpdateView(generic.UpdateView):  # pylint: disable=too-many-ancestors
     """
-    View for registering users using django forms
+    View for editing users profile using customised form.
     """
     form_class = EditUserForm
     template_name = 'registration/edit_user.html'

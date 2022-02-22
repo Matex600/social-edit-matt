@@ -7,11 +7,11 @@ from .models import UserProfile
 
 class ProfileForm(forms.ModelForm):
     """
-    Form used to display fields for creating user profile
+    Form class for profile.
     """
     class Meta:
         """
-        Adding widgets to determine input and style classes
+        Meta class adds widgets to determine inputs and style classes.
         """
         model = UserProfile
         fields = ('user_bio', 'user_image', 'github_url', 'linkedin_url',
@@ -28,21 +28,22 @@ class ProfileForm(forms.ModelForm):
 
 class RegisterForm(UserCreationForm):
     """
-    Form used to style fields for registering a user to the blog page
+    Form for displaying fields when user registers.
     """
     email = forms.EmailField(widget=forms.
                              EmailInput(attrs={'class': 'form-control'}))
 
     class Meta:
         """
-        Display fields for registering user
+        
+        Meta class to display fields for registering a user to the blog page.
         """
         model = User
         fields = ('username', 'email', 'password1', 'password2')
 
     def __init__(self, *args, **kwargs):
         """
-        Function to style user registering fields
+        Function to style user registering fields.
         """
         super().__init__(*args, **kwargs)
 
@@ -56,7 +57,7 @@ class RegisterForm(UserCreationForm):
 
 class EditUserForm(UserChangeForm):
     """
-    Form used to display fields for editing a user profile
+    Form used to style fields for editing a user profile.
     """
     email = forms.EmailField(widget=forms.
                              EmailInput(attrs={'class': 'form-control'}))
@@ -82,7 +83,7 @@ class EditUserForm(UserChangeForm):
 
     class Meta:
         """
-        Display fields for editing user profile
+        Meta class displaying fields for editing user profile.
         """
         model = User
         fields = ('username', 'first_name', 'last_name',
@@ -91,7 +92,7 @@ class EditUserForm(UserChangeForm):
 
 class PasswordUpdatingForm(PasswordChangeForm):
     """
-    Form used to style fields for registering a user to the blog page
+    Form used to style fields for password updating.
     """
     old_password = forms.CharField(label='Old Password',
                                    widget=forms.PasswordInput
@@ -108,7 +109,7 @@ class PasswordUpdatingForm(PasswordChangeForm):
 
     class Meta:
         """
-        Display fields for registering user
+        Meta class displays fields when updating password.
         """
         model = User
         fields = ('old_password', 'new_password1', 'new_password2')

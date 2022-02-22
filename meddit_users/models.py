@@ -6,7 +6,8 @@ from cloudinary.models import CloudinaryField
 
 class UserProfile(models.Model):
     """
-    User model
+    User profile model displaying showing fields
+    when user goes to their user profile.
     """
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     user_bio = models.TextField()
