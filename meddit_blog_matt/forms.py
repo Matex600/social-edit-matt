@@ -24,16 +24,9 @@ class AddPostForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Choose a blog title!'}),
             'category': forms.Select(choices=choice_list, attrs={'class': 'form-control'}),
-            'body': SummernoteWidget(attrs={'class': 'form-control'}),
+            'body': forms.Textarea(attrs={'class': 'form-control'}),
             'blog_snippet': forms.Textarea(attrs={'class': 'form-control'}),
         }
-
-
-class SummernoteForm(forms.Form):
-    """
-    Class to enable summernote editor in create post form  
-    """
-    summer = forms.CharField(widget=SummernoteInplaceWidget())
 
 
 class EditPostForm(forms.ModelForm):
@@ -50,7 +43,7 @@ class EditPostForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'category': forms.Select(choices=choice_list, attrs={'class': 'form-control'}),
-            'body': SummernoteWidget(attrs={'class': 'form-control'}),
+            'body': forms.Textarea(attrs={'class': 'form-control'}),
             'blog_snippet': forms.Textarea(attrs={'class': 'form-control'}),
         }
 
