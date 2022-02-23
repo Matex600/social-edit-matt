@@ -79,7 +79,9 @@ body {
    color: #000000;
 }
 
-
+.comment{
+   text-align: center;
+}
 
 
 /* Media Queries */

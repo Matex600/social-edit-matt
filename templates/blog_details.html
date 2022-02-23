@@ -52,8 +52,9 @@
 </div>
 <hr>
 
-<h2>Comments:</h2>
+<h2 class="comment">Comments:</h2>
 <div class="container comment-wrapper">
+{% if user.is_authenticated %}
 {% if not post.comments.all %}
 There are no comments on this post! <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add comment</a>
 {% else %}
@@ -74,6 +75,10 @@ There are no comments on this post! <a href="{% url 'add_comment' post.pk %}" cl
   {% endfor %}
 </div>
 {% endif %}
+{% else %}
+<h4 class="comment">You must be logged in to comment! <a class="btn btn-secondary comment" href="{% url 'login' %}">Login</a></h4>
+
+{% endif %}
 </div>
 
 <hr>
@@ -81,8 +86,8 @@ There are no comments on this post! <a href="{% url 'add_comment' post.pk %}" cl
 <br><br>
 <div class="container">
   <div class="card mb-3">
-    <div class="row no-gutters">
-      <div class="col-xs- col-sm-4 col-md-2">
+    <div class="row row-cols-auto no-gutters">
+      <div class="col">
         {% if post.author.userprofile.user_image %}
         <img src="{{ post.author.userprofile.user_image.url }}" class="image" alt="User image">
         {% else %}
@@ -90,7 +95,7 @@ There are no comments on this post! <a href="{% url 'add_comment' post.pk %}" cl
           alt="Placeholder user image">
         {% endif %}
       </div>
-      <div class="col-sm-8 col-md-10 card-body profile-card">
+      <div class="col card-body profile-card">
         <div class="card-body">
           <h5 class="card-title">
             {{ post.author|title }}
