@@ -1,5 +1,36 @@
-- [Placeholder Title](#placeholder-title)
-- [Project Introduction](#project-introduction)
+# Meddit - Blog
+
+![AmIresponsive](documentation/readme_images/amiresponsive.PNG)
+
+[Site Live link](https://project4-matt-ci.herokuapp.com/)
+
+I recommend clicking any links found in this README with Ctrl + Left mouse click for (Windows) and Control + click (Mac) 
+# Project Introduction
+
+This website is a fullstack application Using mainly the Django fullstack web framework.
+
+My Goal is to create a functioning, responsive Blog that users can make blog posts, up vote and down vote as well as make comments.
+
+The Sites purpose is to allow users to connect with each other and share things they find interesting like hobbies or news!
+
+Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
+
+
+ * This project is created using
+  1. Django 3.2
+  2. Heroku (Deployment)
+  3. Heroku PostgresSQL
+  4. Bootstrap 5
+  5. Github (Repository Hosting)
+  6. Gitpod (Development environment)
+
+  * Blog site allowing users to
+  1. Create | Edit | Delete Posts
+  2. Create | Categories
+  3. Create | Comments
+  4. Login | Register | Logout
+  5. Create | Update | User Profile
+
 - [User Experience](#user-experience)
   * [User Stories](#user-stories)
 - [Site Design](#site-design)
@@ -26,6 +57,10 @@
 - [Testing](#testing)
   * [Validation](#validation)
   * [Bugs](#bugs)
+   * ```
+      DETAIL:  Key (slug)=() already exists.
+     ``` 
+     solution add null=True to slug model
 - [Site Deployment](#site-deployment)
   * Deploying project to Heroku - [Live Link](https://project4-matt-ci.herokuapp.com/)
 - [Cloning using Github](#cloning-using-Github)
@@ -64,3 +99,4 @@
     #### **Note.**
     This project uses Python and has to be deployed with a hosting platform such as Heroku as it handles backend functionality.
 - [Credits](#credits)
+https://mdbootstrap.com/docs/standard/extended/login/
