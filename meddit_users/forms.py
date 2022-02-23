@@ -35,7 +35,6 @@ class RegisterForm(UserCreationForm):
 
     class Meta:
         """
-        
         Meta class to display fields for registering a user to the blog page.
         """
         model = User
