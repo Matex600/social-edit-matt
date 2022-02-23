@@ -48,8 +48,32 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
     
     * I have kept font size as default as I feel that it looks good and what I wanted for the blog hence I have no need to change it.
 
-  * [Colour Scheme](#colour-scheme)
+  ### Color Scheme
 
+    * color: #ffff01 | Highlighting Navbar links, for good accessability and indicates to user that they are hovering over a link.
+
+    * color: #FFFFFF | Is used for text color within the navbar, blog titles on index, blog description, date, time, author and category.
+
+    * In the blog detail it is used for blog body text and user profile at foot of page.
+
+    * color: #E0DFDF | This color is used for the body (blog background) to compliment the other slightly darker colour.
+
+    * color: #494242 | I have chosen this color for the cards for individual blogs as I feel that it makes them stand out and the center of attention.
+
+    * color: #221f1f | I have chosen this color for the navigation bar to as it is a darker gray to my other colors and is bold and makes the navigation standout better.
+
+    * color: #000000 I used this colour for the tile of the blog details page to make it standout as its an important piece of the blog the information below the title is this color also to separate it from the body content.
+
+    ### Color Pallet
+    
+    ![Color-Pallete](documentation/readme_images/colourpallete.PNG)
+    ### Blog card color
+
+    ![Color-#494242](documentation/readme_images/color494242.PNG)
+
+    ### 
+
+    ![Eight-Shapes-Grid](documentation/readme_images/contrastgrid.PNG)
 
   * [Wireframes](#wireframes)
     + [Balsamiq Wireframes](#balsamiq-wireframes)
