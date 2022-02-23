@@ -33,9 +33,24 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
 - [User Experience](#user-experience)
   * [User Stories](#user-stories)
-- [Site Design](#site-design)
-  * [Composition](#composition)
+  # Site Design
+
+  ## Composition
+
+  ### Fonts 
+    * [Roboto](https://fonts.google.com/specimen/Roboto). - Font used for Body text.
+    * [Roboto - Slab](https://fonts.google.com/specimen/Roboto+Slab?query=roboto+slab). - Font used for Header text.
+
+    * I have chosen these two fonts as they compliment themselves together and compliment my blog.
+
+    * sans-serif is used as a backup font incase one or both fail for any reason.
+  ### Font Size
+    
+    * I have kept font size as default as I feel that it looks good and what I wanted for the blog hence I have no need to change it.
+
   * [Colour Scheme](#colour-scheme)
+
+
   * [Wireframes](#wireframes)
     + [Balsamiq Wireframes](#balsamiq-wireframes)
     + [PC [2560 x 1440]](#pc--2560-x-1440-)
