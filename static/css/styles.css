@@ -87,6 +87,22 @@ body {
 /* Media Queries */
 
 
+@media screen and (max-width: 768px) {
+
+   .container {
+      max-width: none;
+   }
+
+   .comment {
+      word-spacing: 2px;
+   }
+
+   .index-card {
+      padding-right: none;
+   }
+}
+
+
 @media screen and (max-width: 500px) {
 
    .image {

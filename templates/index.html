@@ -5,11 +5,11 @@
 {% block content %}
 
 <div class="container-fluid">
-  <div class="row">
+  <div class="row g-0">
     <div class="col-auto mt-3 left">
       <div class="row">
         {% for post in object_list %}
-        <div class="col-md-auto">
+        <div class="col-md-auto index-card">
           <div class="card mb-3">
             <div class="card-body">
               <div class="image-container">
@@ -23,7 +23,7 @@
               </div>
               <h2 class="card-title">
                 <p class="author"><a href="{% url 'blog-detail' post.pk  %}">
-                    {{ post.title|title }}</a></p>
+                    {{ post.title }}</a></p>
               </h2>
               <p class="card-text">{{ post.blog_snippet | safe}}</p>
               </a>
