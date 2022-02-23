@@ -1,12 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap');
 
+/* Headings */
+
 h1, h2, h3, h4, h5, h6 {
    font-family: 'Roboto Slab', sans-serif;
+   color: #000000;
 }
 
+.fw-bold.mb-2.text-uppercase.h2{
+   color: #FFFFFF;
+}
+
+/* Navbar */
 nav {
    font-family: 'Roboto Slab', sans-serif;
 }
+
 .nav-custom {
    background-color: #221f1f;
 }
@@ -15,43 +24,22 @@ nav {
    color: #FFFFFF;
 }
 
+.navbar.navbar-expand-lg.navbar-dark.nav-custom li p {
+   color: #FFFFFF;
+}
+
 .navbar.navbar-expand-lg.navbar-dark.nav-custom li a:hover {
    color: #ffff01;
 }
 
+.container-fluid {
+   color: #221f1f;
+}
+
+/* Images */
+
 .img-fluid {
    height: 100%;
-}
-
-body {
-   font-family: 'Roboto', sans-serif;
-   background-color: rgb(224, 223, 223);
-}
-
-.bg-dark {
-   background-color: #221f1f;
-}
-
-.card-header { 
-   background-color: #221f1f;
-}
-
-.btn {
-   border: 1px solid #000000;
-   
-}
-
-.center-div {
-   margin: auto;
-   text-align: center;
-}
-
-.btn:hover {
-   border: 1.5px solid #221f1f;
-}
-
-.row>* {
-   padding-right: 0;
 }
 
 .image {
@@ -60,17 +48,31 @@ body {
    margin-left: auto;
    margin-right: auto;
 }
-.card-body {
-   background-color: #494242;
-   color: #FFFFFF;
+
+/* Body */
+
+body {
+   font-family: 'Roboto', sans-serif;
+   background-color: #E0DFDF;
 }
 
-.card-body.profile-card {
+.card-header { 
    background-color: #221f1f;
 }
 
-.card-body a{
-   color: #FFFFFF;
+/* Buttons */ 
+.btn {
+   border: 1px solid #000000;
+   
+}
+
+.btn:hover {
+   border: 1.5px solid #221f1f;
+}
+
+.center-div {
+   margin: auto;
+   text-align: center;
 }
 
 .card-header.card-body a:hover {
@@ -78,19 +80,47 @@ body {
    color: #ffff01;
 }
 
-.comment-wrapper {
-   max-height: 25vh;
-   max-width: 90%;
-   /* max-height: 50%; */
-   overflow-y: scroll;
-}
-
 .list-group-item.list-group-item-dark.m-4 a{
    color: #000000;
 }
 
+/* Blog cards */
+
+.row>* {
+   padding-right: 0;
+}
+
+.card-title {
+   color: #FFFFFF;
+}
+
+.card-body {
+   background-color: #494242;
+   color: #FFFFFF;
+}
+
+.card-body.profile-card {
+   background-color: #494242;
+}
+
+.card-body a{
+   color: #FFFFFF;
+}
+
+/* Comments */
+
+.comment-wrapper {
+   max-height: 25vh;
+   max-width: 90%;
+   overflow-y: scroll;
+}
+
 .comment{
    text-align: center;
+}
+
+small.card-text.text-muted {
+   font-size: 14px;
 }
 
 
