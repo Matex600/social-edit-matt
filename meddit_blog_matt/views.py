@@ -121,7 +121,7 @@ def results_view(request):
     """
     if request.method == 'POST':
         searched = request.POST.get('searched')
-        posts = Post.objects.filter(title__contains=searched)
+        posts = Post.objects.filter(title__icontains=searched)
         return render(request, 'search_results.html',
                       {'searched': searched, 'posts': posts})
     else:
