@@ -2,13 +2,14 @@
 {% block title %}{{ post.title_tag }} {% endblock%}
 {% block content %}
 
-
+<!-- blog title and date created -->
 <h1>{{ post.title|title }}</h1>
 <small>By:
   {{ post.author.username|title }} |
   Created on | {{ post.date_created }}
   {% if user.is_authenticated %}
   {% if user.id == post.author.id %}
+  <!-- buttons for edit/delete checks if user made the post -->
   <a class="btn btn-success" href="{% url 'edit_post' post.pk  %}">Edit</a>
   <a class="btn btn-danger" href="{% url 'delete_post' post.pk  %}">Delete</a>
   <a class="btn btn-warning" href="{% url 'home' %}" id="btn-back">Go Back!</a>
@@ -18,6 +19,7 @@
   {% endif %}
   {% endif %}
 </small>
+<!-- Main content of blog post with image and text -->
 <div class="container">
   <div class="card mb-3">
     <div class="card-body">
@@ -34,7 +36,7 @@
   <form action="{% url 'up_vote_post' post.pk %}" method="POST">
     {% if user.is_authenticated %}
     {% csrf_token %}
-
+<!-- buttons for upvote and downvote -->
     {% if user in post.likes.all %}
     <button type="submit" , name="post_id" , value="{{ post.id }}" , class="btn btn-danger btn-sm">Downvote</button>
 
@@ -54,31 +56,32 @@
 
 <h2 class="comment">Comments:</h2>
 <div class="container comment-wrapper">
-{% if user.is_authenticated %}
-{% if not post.comments.all %}
-There are no comments on this post! <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add comment</a>
-{% else %}
-<div class="row row-cols-auto justify-content-center">
-  {% for comment in post.comments.all %}
-  {% if comment.approved %}
-  <div class="col">
-    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-      <div class="card-header">Posted | {{ comment.name|title }}</div>
-      <div class="card-body">
-        <p class="card-text"> {{ comment.content }}</p>
-        {{ comment.date_created }}
+  {% if user.is_authenticated %}
+  {% if not post.comments.all %}
+  There are no comments on this post! <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add comment</a>
+  {% else %}
+  <div class="row row-cols-auto justify-content-center">
+    {% for comment in post.comments.all %}
+    {% if comment.approved %}
+    <div class="col">
+      <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+        <div class="card-header">Posted | {{ comment.name|title }}</div>
+        <div class="card-body">
+          <p class="card-text"> {{ comment.content }}</p>
+          {{ comment.date_created }}
+        </div>
+        <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add a new comment</a>
       </div>
-      <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add a new comment</a>
     </div>
+    {% endif %}
+    {% endfor %}
   </div>
   {% endif %}
-  {% endfor %}
-</div>
-{% endif %}
-{% else %}
-<h4 class="comment">You must be logged in to comment! <br><br> <a class="btn btn-secondary comment" href="{% url 'login' %}">Login</a></h4>
+  {% else %}
+  <h4 class="comment">You must be logged in to comment! <br><br> <a class="btn btn-secondary comment"
+      href="{% url 'login' %}">Login</a></h4>
 
-{% endif %}
+  {% endif %}
 </div>
 
 <hr>
