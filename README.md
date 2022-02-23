@@ -71,7 +71,7 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
     ![Color-#494242](documentation/readme_images/color494242.PNG)
 
-    ### 
+    ### Colour grid
 
     ![Eight-Shapes-Grid](documentation/readme_images/contrastgrid.PNG)
 
@@ -143,5 +143,32 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
     #### **Note.**
     This project uses Python and has to be deployed with a hosting platform such as Heroku as it handles backend functionality.
-- [Credits](#credits)
-https://mdbootstrap.com/docs/standard/extended/login/
+ # Credits
+
+ ## Media
+  [Login/Register](https://mdbootstrap.com/docs/standard/extended/login). - Inspiration for login/register page.
+
+  Placeholder User Image (Default User Image) this Image was made by myself in microsoft paint.
+
+  [Site (M) Logo](https://www.creativefabrica.com/) I purchased this logo from Creative fabrica and have a license to use it.
+ ## Acknowledgment
+  * [Django Documentation](https://docs.djangoproject.com/en/3.2/). - Helping me understand Django better.
+
+  * [Django for beginners](https://youtu.be/rHux0gMZ3Eg). - Thank you to programming with Mosh for helping me understand views and urls better.
+
+  * [Python Django 7 course](https://www.youtube.com/watch?v=PtQiiknWUcI). - Thank you Traversy media for helping me learn more Django.
+
+  * [Stack Overflow](https://stackoverflow.com/).- Stack Overflow helped me debug my application.
+
+  * [Tutor Support](https://codeinstitute.net/).- Tutor support has been helpful, I have barely used it until this project but it has been very helpful and helped me understand a problem so I can solve it.
+
+  * [Code Institute](https://codeinstitute.net/).- For preparing me for this project with their template and lessons.
+
+  * [Balsamiq](https://balsamiq.com/wireframes/).- Wireframes for this project.
+
+  * [Lucid Chart](https://www.lucidchart.com/pages/).- Logic Chart.
+
+  * My mentor Maranatha Ilesanmi has helped me with improving the styling on my page and motivating me to push through any struggles I have had as well as offering useful advice on site layout. 
+  * [Favicon](https://favicon.io/).- For converting my logo into a favicon.
+
+  * [Fix NoReverseMatch](https://stackoverflow.com/questions/38390177/what-is-a-noreversematch-error-and-how-do-i-fix-it).- This article helped me fix a few of the errors I got creating this blog.
