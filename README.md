@@ -84,7 +84,13 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   3. Pressing said button will create a copy for you to use.
 
 - [Deployment using Heroku](#Deployment-usingHeroku)
+  * Development Environment
+    1. Create requirements.txt ```pip3 freeze --local > requirements.txt```
+    2. Create Procfile containing application name ensure proper formatting or deploymentw will fail.
+    3. Commit and push changes to Github.
+    4. Move to Heroku part of deployment.
 
+  * Heroku
     1. Create an account with [Heroku](https://signup.heroku.com/).
     2. Create a new app, with an appropriate region and name.
     3. In **Resources** add **Heroku Postgres**.
