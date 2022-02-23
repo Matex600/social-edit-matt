@@ -11,7 +11,9 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="icon" type="image/xicon" href="{% static 'favicon/favicon.ico' %}">
-<!-- Page title -->
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/0d1a5e71cc.js" crossorigin="anonymous"></script>
+    <!-- Page title -->
     <title>{% block title %}
         Meddit - Blog
         {% endblock %}</title>
@@ -70,7 +72,9 @@
                     <li>
                         <a class="nav-link" href="{% url 'login' %}">Login</a>
                     </li>
-
+                    <li>
+                    <p class="nav-link"> <i class="fa-solid fa-arrow-left fa-beat-fade"></i> | Log in to Share your posts and View comments! |</p>
+                    </li>
                     {% endif %}
                 </ul>
                 <!-- User drop down with creating profile and editing profile & logout -->
