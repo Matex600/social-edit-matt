@@ -45,7 +45,7 @@
 
     {% endif %}
     {% else %}
-    <small> Login to like post! </small>
+    <strong> Login to like post! </strong>
     {% endif %}
     <strong> - {{ number_of_likes }} - votes on this post</strong>
   </form>
@@ -138,8 +138,8 @@
           <p class="card-text">
             {{ post.author.userprofile.user_bio}}
           </p>
-
-          <p class="card-text"><small class="text-muted">Last seen | {{ user.last_login }}</small></p>
+          <hr>
+          <p class="card-text h6">Last seen | {{ user.last_login }}</p>
 
         </div>
       </div>
