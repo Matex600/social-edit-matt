@@ -106,6 +106,10 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
+
+# I am leaving AUTH_PASSWORD_VALIDATORS lines
+# too long because if I fix this error my registration breaks
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',

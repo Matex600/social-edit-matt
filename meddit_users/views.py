@@ -8,6 +8,10 @@ from .forms import (RegisterForm, EditUserForm,
                     PasswordUpdatingForm, ProfileForm)
 
 
+# I have disabled error too many ancestors as I have have been unable to fix
+# within time scale as it would mean re writing code this is will be a future update.
+
+
 class CreateProfilePageView(CreateView):  # pylint: disable=too-many-ancestors
     """
     View using form profileform to for creating user profile.
