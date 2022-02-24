@@ -26,6 +26,7 @@ nav {
 
 .navbar.navbar-expand-lg.navbar-dark.nav-custom li p {
    color: #FFFFFF;
+   font-size: 12px;
 }
 
 .navbar.navbar-expand-lg.navbar-dark.nav-custom li a:hover {
