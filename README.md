@@ -274,55 +274,207 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
      solution add null=True to slug model
 - [Site Deployment](#site-deployment)
   * Deploying project to Heroku - [Live Link](https://project4-matt-ci.herokuapp.com/)
-- [Cloning using Github](#cloning-using-Github)
 
-    [Repository Link](https://github.com/Matex600/social-edit-matt)
-    * Log in to Github.
-    * Access my repository using above link.
-    * In repository page select code next to Gitpod.
-    * Button, make sure HTTPS is selected.
-    * Click on the copy button on the right (Two overlapping squares)
-    * Open a new workspace in Gitpod.
-    * Once the workspace loads in the terminal type.
+ # Development Process
+  
+
+  ## Week 1 - Project Conception
+  Time spent daily: 2-3 hours
+  ### Project Conception
+  <br>
+  Development began with, opening a repository with code institutes github template, and installing all required packages, libraries, frameworks, connecting to Heroku PostgreSQL. 
+
+  Followed by constructing a github project, 'issues' and their corresponding tags and adding 'issues' to corresponding columns.
+
+  After this I created the initial wireframing for the site structure along with making a logic diagram.
+
+  ![LogicDiagram](documentation/readme_images/Project_4_Diagram.PNG)
+
+
+  <hr>
+
+  ## Week 2 
+  Time spent daily: 3-4 hours
+  ### Crud | Database Reset
+  <br>
+
+  Phase 2 of development began with creating starting a Django project and app with settings setup and initial deployment.
+  
+  The early deployment was to avoid issues further down the line, being granted the ability to debug deployment failures with ease.
+
+  In this phase I added some basic CRUD functionality with creating, editing and deleting posts by creating the Post model and @admin.register function.
+
+  While developing I made sure to follow the agile development process. 
+
+  I begun using bootstrap and created templates to display posts in basic form along with a functional navbar.
+
+  As well as an early version of authentication with logging in registering and logging out and fixing issues.
+
+  In this phase I encountered a major bug in my database, where I could not make migrations after spending a considerable amount of time I decided to reset the DB and start over with creating test posts and categories.
+
+  Code used to reset database
+
+    ```
+
+      heroku login 
+
+      heroku apps
+  
+      heroku pg:reset DATABASE --app
+   
+      appname
+
+      touch reset.py
+
+      python3 reset.py
+
+      python3 manage.py createsuperuser
+
+    ```
+
+  <hr>
+
+  ## Week 3 
+  Time spent daily: 4-6 hours
+  ### Troubleshooting | Categories
+  <br>
+  
+  Development Phase 3 began with an increase to my availabilty, in this phase I added the ability to add an ordered category and linking blog pages to their categories.
+
+  As well as adding categories dropdown to navigation and authenticating users as to limit only logged in users to create posts.
+
+  During this phase I also added functional upvote and downvote buttons.
+
+  Phase 3 in development brought in a lot of issues, I experienced a large share of errors when testing out functionality and had to spend a lot of time researching and debugging the application, This slowed the process considerably.
+
+  <hr>
+
+  ## Week 4 
+  Time spent: 5-6 hours daily
+  ### Functionality | Styling
+  <br>
+  
+  Phase 4 of development added most of the styling and most final functionality and styling to Posts, Categories, Likes.
+
+  In this phase I created the 'User-profile' page with an ability for the user to edit profile settings and information.
+
+  In addition I created functionality for changing user password, uploading user images to profile and posts with cloudinary.
+
+  I struggled with the ``` NoReverseMatch ``` error I was able to fix this by modifying templates, urls and views.
+
+  Furthermore I enabled users to create comments and post comments that are approved by an Administrator.
+
+  As well as styling the Login and register page to the final design stage.
+
+  <hr>
+
+  ## Week 5
+  Time spent: 8-10 hours daily
+  ### Code Cleanup | Final Design | README
+
+  Development phase 5 begun with final styling of the website, and using bootstrap to create a grid system to place all site components in a uniform manner.
+
+  In addition to this I tested the site manually as well as asking family, friends and fellow students to help me test site functionality, This allowed me to make some crucial changes to improve overall design and functionality.
+
+  I encountered a problem with categories not appearing for 20-30 mintues when creating one in the Heroku deployed site I resolved this by destroying and replacing Database and changing category in post model to a Foreignkey from a Charfield, migrating a new database and remaking views, urls and templates to accomodate foreign keys.
+
+  ![View](documentation/bugs/category.view.PNG)
+
+  <br>
+  <hr>
+
+  ![Forms](documentation/bugs/category.forms.PNG)
+
+  <br>
+  <hr>
+
+  ![Context](documentation/bugs/context.png)
+
+  <br>
+  <hr>
+
+  ![Urls](documentation/bugs/urls.png)
+
+  The above problem took up most of this development phase.
+
+  Therefore I dedicated my remaining time to completing README.md document and final touches.
+
+  <hr>
+  <br>
+
+ # Cloning using Github
+
+  [Repository Link](https://github.com/Matex600/social-edit-matt)
+
+  * Log in to Github.
+  
+  * Access my repository using above link.
+
+  * In repository page select code next to Gitpod.
+
+  * Button, make sure HTTPS is selected.
+
+  * Click on the copy button on the right (Two overlapping squares)
+
+  * Open a new workspace in Gitpod.
+
+  * Once the workspace loads in the terminal type.
         ```
         git clone https://github.com/Matex600/social-edit-matt
         ```
 
-- [Forking using Github](#Forking-using-Github)
-    * You can contribute to this project without affecting the main branch with the following steps.
+ # Forking using Github
+  * You can contribute to this project without affecting the main branch with the following steps.
+
   1. Navigate to github repositores select this [repository](https://github.com/Matex600/social-edit-matt).
+
   2. On the right of the repository name you will find the fork button next to star and watch buttons.
+
   3. Pressing said button will create a copy for you to use.
 
-- [Deployment using Heroku](#Deployment-usingHeroku)
+ # Deployment using Heroku
+
   * Development Environment
     1. Create requirements.txt ```pip3 freeze --local > requirements.txt```
-    2. Create Procfile containing application name ensure proper formatting or deploymentw will fail.
+    
+    2. Create Procfile containing application name ensure proper formatting or deployment will fail.
+
     3. Commit and push changes to Github.
+
     4. Move to Heroku part of deployment.
 
   * Heroku
     1. Create an account with [Heroku](https://signup.heroku.com/).
+
     2. Create a new app, with an appropriate region and name.
+
     3. In **Resources** add **Heroku Postgres**.
+
     4. Within your newly created app
     go to settings go to **Config Vars**
     use the **DATABASE_URL** Value and add it to your env.py file and connect it via settings.py.
+
     5. Create a **SECRET_KEY** Key and the Value as desired key.
+
     6. Next go to the **Deploy** tab next to **Deployment Method** click **GitHub** connect your account and repository.
+
     7. **Recommended** enable automatic deploys.
+
     8. At the Bottom of the page hit deploy branch making sure it is set to **main**
 
     #### **Note.**
+
     This project uses Python and has to be deployed with a hosting platform such as Heroku as it handles backend functionality.
+
  # Credits
 
  ## Media
-  [Login/Register](https://mdbootstrap.com/docs/standard/extended/login). - Inspiration for login/register page.
 
-  Placeholder User Image (Default User Image) this Image was made by myself in microsoft paint.
+  * [Login/Register](https://mdbootstrap.com/docs/standard/extended/login). - Inspiration for login/register page.
 
-  [Site (M) Logo](https://www.creativefabrica.com/) I purchased this logo from Creative fabrica and have a license to use it.
+  * Placeholder User Image (Default User Image) this Image was made by myself in microsoft paint.
+
+  * [Site (M) Logo](https://www.creativefabrica.com/) I purchased this logo from Creative fabrica and have a license to use it.
  ## Acknowledgment
   * [Django Documentation](https://docs.djangoproject.com/en/3.2/). - Helping me understand Django better.
 
