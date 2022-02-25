@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{% if category.id %}
+{% if category_posts %}
 
 <h1>{{ category.name }}:</h1>
 
@@ -11,15 +11,14 @@
                 {{ post.title | title }} </a></strong> :
         <p>{{ post.author.username | title }} |
             {{ post.blog_snippet | safe }} {{ post.date_created }}</p>
-
-
     </li>
     {% endfor %}
 </ul>
 {% else %}
-<li class="list-group-item list-group-item-dark m-4"><strong>{{ post.category.name }}</strong> :
-<li class="list-group-item list-group-item-dark m-4">There are no posts here yet, Why Don't you make
+<li class="list-group-item list-group-item-dark m-4"><strong>{{ category.name }}</strong>
+<li class="list-group-item list-group-item-dark m-4">There are no posts in this category yet, Why don't you make
         one?</li>
 <a class="btn btn-warning m-4" href="{% url 'home' %}">No take me back !</a>
 {% endif%}
+
 {% endblock %}
