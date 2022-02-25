@@ -7,18 +7,18 @@
 I recommend clicking any links found in this README with Ctrl + Left mouse click for (Windows) and Control + click (Mac) 
 # Project Introduction
 
-This website is a fullstack application Using mainly the Django fullstack web framework.
+This website is a fullstack application using mainly the Django fullstack web framework.
 
-My Goal is to create a functioning, responsive Blog that users can make blog posts, up vote and down vote as well as make comments.
+My Goal is to create a functioning and responsive Blog, that allows users can make blog posts. Users can also up vote and down vote as well as make comments.
 
-The Sites purpose is to allow users to connect with each other and share things they find interesting like hobbies or news!
+The Sites purpose is to allow users to connect with each other, and share things they find interesting like hobbies or news!
 
-I have built this project with the future in mind as I have many plans to expand, improve further modernise design, technology, styling and featureset.
+I have built this project with the future in mind, as I have many plans to expand, improve, modernise design, technology, styling and featureset.
 
 Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
 
- * This project is created using
+ * This project is created using:
   1. Django 3.2
   2. Heroku (Deployment)
   3. Heroku PostgresSQL
@@ -26,7 +26,7 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   5. Github (Repository Hosting)
   6. Gitpod (Development environment)
 
-  * Blog site allowing users to
+  * Blog site allowing users to:
   1. Create | Edit | Delete Posts
   2. Create | Categories
   3. Create | Comments
@@ -41,32 +41,41 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   
     ![AgileProject](documentation/readme_images/projectAgile.PNG)
 
-  * Steps taken
+  * Steps Taken:
 
-    1. Created issues tags showing with varying importance to the project.
+    1. Created issue tags showing varying importance to the project.
 
-    2. Created issues with tags : 'Must have' (Most important features) 'Should have' (Should be implemented) 'Could have' (Implement if there is time) 'Won't have' (Features that have been outside of current scope)
+    2. Created issues with tags: 'Must have' (Most important features) 'Should have' (Should be implemented) 'Could have' (Implement if there is time) 'Won't have' (Features that have been outside of current scope)
 
-    3. Created Github Project (Old version) at time of submission a new version of Github project has been released I will implement this new version in future projects. I created a project with columns 'to do' (Work that needs to be one) 'In progress' (Feature in development) 'Done' (Feature complete entered testing stage) 'Future content' (Content implemented post release).
+    3. Created Github Project (Old version) at the time of submission; a new version of Github project has been released, I will implement this new version in future projects.
 
-    4. I then assigned issues to the project as development continued making decisions a long the way.
+    4. I created a project with columns 'to do' (Work that needs to be done), 'In progress' (Feature in development), 'Done' (Feature complete and tested), 'Future content' (Content implemented post release).
+
+    5. I then assigned 'issues' to the project as development continued, making decisions a long the way.
 
     ### Significace and Complexity 
     ![Significace and Complexity](documentation/readme_images/Significance_and_complexity.PNG) ![Key](documentation/readme_images/Significance_and_complexity_key.PNG)
 
-    5. All of the above have been implemented successfully.
+    6. All of the above has been implemented successfully.
 
   ### User testing 
 
-  * I have recieved some feedback from my mentor on my project and I decided to adjust some styling to improve card colours for blog posts I made them a lighter color to complement rest of site.
+  * I have recieved feedback from my mentor on my project, and I decided to adjust some styling to improve card colours for blog posts. I made them a lighter color to complement the rest of the site.
 
-  * I have recieved feedback from my brother that helped me identify an issue with an image in blog details not aligning properly which has been fixed.
+  * I have recieved feedback from my sibling, that enabled me to identify an issue with an image not aligning properly in the blog details therefore it has been patched.
 
-  * I Used code review on slack and recieved feedback to help improve user experience by adding an add post button if a category has no posts to make it easier for user, this has been implemented.
+  * I used the code review channel on slack and recieved feedback to help improve user experience, by adding an add post button if a category has no posts to make it easier for the user. This has been implemented.
 
-  * I have tested site functionality and creating a non admin account, testing login/register, creating post / category, commenting and liking posts, all of these features worked as expected.
+  * I have tested the site functionality and created a non-admin account.
 
-  * I asked my brother to test site functionality such as creating a post and category as after registering and to test login and logout as well as creating and editing a profile those features worked as expected.
+    * Testing:
+      * login/register
+      * creating post / category
+      * commenting and liking posts
+
+    All of these features worked as expected
+
+  * I asked my sibling to assess the site functionality such as creating a post, category and after registering to test login functionality, and logout as well as creating and editing a profile, those features worked as expected.
 
 
   # Site Design
@@ -79,12 +88,12 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   * [Roboto](https://fonts.google.com/specimen/Roboto). - Font used for Body text.
   * [Roboto - Slab](https://fonts.google.com/specimen/Roboto+Slab?query=roboto+slab). - Font used for Header text.
 
-  * I have chosen these two fonts as they compliment themselves together and compliment my blog.
+  * I have chosen these two fonts, as they compliment eachother which additionally compliment my blog.
 
-  * sans-serif is used as a backup font incase one or both fail for any reason.
+  * Sans-Serif is used as a backup font incase one or both fail for any reason.
   ### Font Size
     
-  * I have kept font size as default as I feel that it looks good and what I wanted for the blog hence I have no need to change it.
+  * I have kept font size as default as I feel that it looks good, and what I wanted for the blog I have no need to change it.
 
   ### Color Scheme
 
