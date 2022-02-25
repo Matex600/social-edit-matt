@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% block title %}Blog Categories{% endblock %}
-
 {% block content %}
-
-    <h1>Blog Categories</h1>
-
-    {% for category in categories %}
-        <h4><ul class="list-group-item list-group-item-dark m-4"><a class="dropdown-item" href="{% url 'category' category.id %}">{{ category.name }}</a></ul></h4>
-    {% endfor %}
-
-
+<h1>Blog Categories
+</h1>
+{% for category in categories %}
+<h4>
+  <ul class="list-group-item list-group-item-dark m-4">
+    <a class="dropdown-item" href="{% url 'category' category.id %}">{{ category.name }}
+    </a>
+  </ul>
+</h4>
+{% endfor %}
 {% endblock %}

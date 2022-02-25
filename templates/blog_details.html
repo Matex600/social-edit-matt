@@ -1,20 +1,24 @@
 {% extends 'base.html' %}
 {% block title %}{{ post.title_tag }} {% endblock%}
 {% block content %}
-
 <!-- blog title and date created -->
-<h1>{{ post.title|title }}</h1>
+<h1>{{ post.title|title }}
+</h1>
 <small>By:
   {{ post.author.username|title }} |
   Created on | {{ post.date_created }}
   {% if user.is_authenticated %}
   {% if user.id == post.author.id %}
   <!-- buttons for edit/delete checks if user made the post -->
-  <a class="btn btn-success" href="{% url 'edit_post' post.pk  %}">Edit</a>
-  <a class="btn btn-danger" href="{% url 'delete_post' post.pk  %}">Delete</a>
-  <a class="btn btn-warning" href="{% url 'home' %}" id="btn-back">Go Back!</a>
+  <a class="btn btn-success" href="{% url 'edit_post' post.pk  %}">Edit
+  </a>
+  <a class="btn btn-danger" href="{% url 'delete_post' post.pk  %}">Delete
+  </a>
+  <a class="btn btn-warning" href="{% url 'home' %}" id="btn-back">Go Back!
+  </a>
   {% else %}
-  <a class="btn btn-warning" href="{% url 'home' %}" id="btn-back">Go Back!</a>
+  <a class="btn btn-warning" href="{% url 'home' %}" id="btn-back">Go Back!
+  </a>
   <hr>
   {% endif %}
   {% endif %}
@@ -23,9 +27,11 @@
 <div class="container">
   <div class="card mb-3">
     <div class="card-body">
-      <p class="card-text">{{ post.body | safe }}</p>
+      <p class="card-text">{{ post.body | safe }}
+      </p>
       <hr>
-      <p class="card-text h6">Updated on | {{ post.updated_on }}</p>
+      <p class="card-text h6">Updated on | {{ post.updated_on }}
+      </p>
     </div>
     <div class="image-container">
       {% if post.post_image.url %}
@@ -36,41 +42,48 @@
   <form action="{% url 'up_vote_post' post.pk %}" method="POST">
     {% if user.is_authenticated %}
     {% csrf_token %}
-<!-- buttons for upvote and downvote -->
+    <!-- buttons for upvote and downvote -->
     {% if user in post.likes.all %}
-    <button type="submit" , name="post_id" , value="{{ post.id }}" , class="btn btn-danger btn-sm">Downvote</button>
-
+    <button type="submit" , name="post_id" , value="{{ post.id }}" , class="btn btn-danger btn-sm">Downvote
+    </button>
     {% else %}
-    <button type="submit" , name="post_id" , value="{{ post.id }}" , class="btn btn-dark btn-sm">Upvote</button>
-
+    <button type="submit" , name="post_id" , value="{{ post.id }}" , class="btn btn-dark btn-sm">Upvote
+    </button>
     {% endif %}
     {% else %}
-    <strong> Login to like post! </strong>
+    <strong> Login to like post! 
+    </strong>
     {% endif %}
-    <strong> - {{ number_of_likes }} - votes on this post</strong>
+    <strong> - {{ number_of_likes }} - votes on this post
+    </strong>
   </form>
   <br>
 </div>
 </div>
 <hr>
-
-<h2 class="comment">Comments:</h2>
+<h2 class="comment">Comments:
+</h2>
 <div class="container comment-wrapper">
   {% if user.is_authenticated %}
   {% if not post.comments.all %}
-  There are no comments on this post! <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add comment</a>
+  There are no comments on this post! 
+  <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add comment
+  </a>
   {% else %}
   <div class="row row-cols-auto justify-content-center">
     {% for comment in post.comments.all %}
     {% if comment.approved %}
     <div class="col">
       <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-        <div class="card-header">Posted | {{ comment.name|title }}</div>
+        <div class="card-header">Posted | {{ comment.name|title }}
+        </div>
         <div class="card-body">
-          <p class="card-text"> {{ comment.content }}</p>
+          <p class="card-text"> {{ comment.content }}
+          </p>
           {{ comment.date_created }}
         </div>
-        <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add a new comment</a>
+        <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add a new comment
+        </a>
       </div>
     </div>
     {% endif %}
@@ -78,15 +91,18 @@
   </div>
   {% endif %}
   {% else %}
-  <h4 class="comment">You must be logged in to comment! <br><br> <a class="btn btn-secondary comment"
-      href="{% url 'login' %}">Login</a></h4>
-
+  <h4 class="comment">You must be logged in to comment! 
+    <br>
+    <br> 
+    <a class="btn btn-secondary comment"
+       href="{% url 'login' %}">Login
+    </a>
+  </h4>
   {% endif %}
 </div>
-
 <hr>
-
-<br><br>
+<br>
+<br>
 <div class="container">
   <div class="card mb-3">
     <div class="row row-cols-auto no-gutters">
@@ -95,7 +111,7 @@
         <img src="{{ post.author.userprofile.user_image.url }}" class="image" alt="User image">
         {% else %}
         <img src="https://res.cloudinary.com/matts-cloud/image/upload/v1645132362/mattuserimage_f5sydl.png"
-          alt="Placeholder user image">
+             alt="Placeholder user image">
         {% endif %}
       </div>
       <div class="col card-body profile-card">
@@ -103,48 +119,48 @@
           <h5 class="card-title">
             {{ post.author|title }}
           </h5>
-          <p class="small text-muted"></p>
-
+          <p class="small text-muted">
+          </p>
           {% if post.author.userprofile.id %}
           <a href="{% url 'show_profile' post.author.userprofile.id %}" target="_blank" rel="noopener">
-            User Profile</a> |
+            User Profile
+          </a> |
           {% endif %}
-
           {% if post.author.userprofile.github_url %}
           <a href="{{ post.author.userprofile.github_url }}" target="_blank" rel="noopener">
-            Github</a> |
+            Github
+          </a> |
           {% endif %}
-
           {% if post.author.userprofile.linkedin_url %}
           <a href="{{ post.author.userprofile.linkedin_url }}" target="_blank" rel="noopener">
-            Linkedin</a> |
+            Linkedin
+          </a> |
           {% endif %}
-
           {% if post.author.userprofile.twitter_url %}
           <a href="{{ post.author.userprofile.twitter_url }}" target="_blank" rel="noopener">
-            Twitter</a> |
+            Twitter
+          </a> |
           {% endif %}
-
           {% if post.author.userprofile.facebook_url %}
           <a href="{{ post.author.userprofile.facebook_url }}" target="_blank" rel="noopener">
-            Facebook</a> |
+            Facebook
+          </a> |
           {% endif %}
-
           {% if post.author.userprofile.instagram_url %}
           <a href="{{ post.author.userprofile.instagram_url }}" target="_blank" rel="noopener">
-            Instagram</a>
+            Instagram
+          </a>
           {% endif %}
           </p>
-          <p class="card-text">
-            {{ post.author.userprofile.user_bio}}
-          </p>
-          <hr>
-          <p class="card-text h6">Last seen | {{ user.last_login }}</p>
-
-        </div>
+        <p class="card-text">
+          {{ post.author.userprofile.user_bio}}
+        </p>
+        <hr>
+        <p class="card-text h6">Last seen | {{ user.last_login }}
+        </p>
       </div>
     </div>
   </div>
 </div>
-
+</div>
 {% endblock %}

@@ -1,20 +1,18 @@
 {% extends 'base.html' %}
 {% block title %}Create a new blog post!{% endblock%}
-
 {% block content %}
-
 {% if user.is_authenticated %}
-    <br/>
-    <h1>Add a Post!</h1>
-    <br/>
-    <div class="mb-3">
-        <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p}}
-        {{ body | safe }}
-        <button class="btn btn-secondary">Submit Post</button>
+<br/>
+<h1>Add a Post!
+</h1>
+<br/>
+<div class="mb-3">
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p}}
+    {{ body | safe }}
+    <button class="btn btn-secondary">Submit Post
+    </button>
     </div>
 {% endif %}
-
-
 {% endblock %}
