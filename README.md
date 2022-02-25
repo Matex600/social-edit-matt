@@ -114,18 +114,45 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
     + [Laptop [1366 x 768]](#laptop--1366-x-768-)
     + [Tablet](#tablet)
     + [Mobile](#mobile)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Coding Languages](#coding-languages)
-  * [HTML5](https://en.wikipedia.org/wiki/HTML5). - Site structure.
-  * [CSS3](https://en.wikipedia.org/wiki/CSS). - Site Design.
-  * [Python3](https://en.wikipedia.org/wiki/Python_(programming_language)). - Used with Django.
-- [Libraries and Frameworks](#libraries-and-tools)
+# Features
+ ## Technologies Used
+  * Coding Languages
+
+    * [HTML5](https://en.wikipedia.org/wiki/HTML5). - Site structure.
+
+    * [CSS3](https://en.wikipedia.org/wiki/CSS). - Site Design.
+
+    * [Python3](https://en.wikipedia.org/wiki/Python_(programming_language)). - Used with Django.
+
+* Libraries, Frameworks & Tools
+
   * [Django](https://www.djangoproject.com/) - Framework used to build the site and admin page.
+
   * [HerokuSQL](https://www.heroku.com/postgres) - Database used in the project.
-  * [Python OS](https://docs.python.org/3/library/os.html). - Used for ```os.environ```.
+
+  * [Python OS](https://docs.python.org/3/library/os.html). - Used for ```os.environ``` to help with automated development ```DEBUG```
+
   * [Markdown](https://en.wikipedia.org/wiki/Markdown). - Used for creating README.md document.
-  * [Bootstrap](https://getbootstrap.com/). - Used for styling the site a framework addition to CSS3.
+
+  * [Bootstrap 5](https://getbootstrap.com/). - Used for styling the site a framework addition to CSS3.
+
+  * [Pylint](https://pylint.org/). - Analysing python code.
+  
+* Hosting Technologies
+
+  * [Heroku](https://dashboard.heroku.com/login). - Deployment and hosting environment.
+
+  * [Cloudinary](https://cloudinary.com/). - Storing images and static files.
+
+  * [Github](https://github.com/). - Hosting Repository code.
+
+* Testing Technologies
+
+
+
+  * [W3C CSS3](https://jigsaw.w3.org/css-validator/). - Validate CSS
+
+  * [DiffChecker](https://www.diffchecker.com/#). - Comparing code changes
 - [Testing](#testing)
   * [Validation](#validation)
   * [Bugs](#bugs)
@@ -210,6 +237,8 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   creating this blog.
 
   * [From CharField to ForeignKey](https://stackoverflow.com/questions/35999186/change-type-of-django-model-field-from-charfield-to-foreignkey). - This article helped me convert categories from Charfield to ForeignKey.
+
+  * [StackOverflow | Safe](https://stackoverflow.com/questions/61819183/django-why-does-the-text-that-i-placed-in-django-summernote-displays-html-tags). - Fixed html escaping.
 
   * [Class has no Objects](https://youtu.be/BSKniGNL5CQ).- Thank you for this video guiding me to install pylint to resolve this issue.
 
