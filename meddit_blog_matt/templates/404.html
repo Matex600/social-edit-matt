@@ -1,25 +1,24 @@
 {% extends 'base.html' %}
-
-
 {% block content %}
-
-
-
 <!-- Handler template for not found request 404. -->
-
 <div class="page-wrap d-flex flex-row align-items-center">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 text-center">
-                <span class="display-1 d-block">404</span>
-                <div class="mb-4 lead"><strong>The page you are looking for was not found, it must have gotten lost somewhere.</strong>
-                </div>
-                <div class="mb-4 lead"><strong>You need to Log in to access this page!.</strong>
-                </div>
-                <a href="{% url 'home' %}" class="btn btn-secondary">Take me Back</a>
-            </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12 text-center">
+        <span class="display-1 d-block">404
+        </span>
+        <div class="mb-4 lead">
+          <strong>The page you are looking for was not found, it must have gotten lost somewhere.
+          </strong>
         </div>
+        <div class="mb-4 lead">
+          <strong>You need to Log in to access this page!.
+          </strong>
+        </div>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Take me Back
+        </a>
+      </div>
     </div>
+  </div>
 </div>
-
 {% endblock %}
