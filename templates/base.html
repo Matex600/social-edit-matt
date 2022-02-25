@@ -45,18 +45,18 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
 
-                            {% for item in cate_menu %}
-                            <li><a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }}</a></li>
+                            {% for category in categories %}
+                            <li><a class="dropdown-item" href="{% url 'category' category.id %}">{{ category.name }}</a></li>
 
                             {% endfor %}
                         </ul>
                     </li>
                     {% else %}
-                    <!-- links for logging/register if statement checking if user_authenticated -->
                     <li class="nav-item">
                         <a class="nav-link text-color-nav li a" href="{% url 'category-list' %}">Categories</a>
                     </li>
                     {% endif %}
+                    <!-- links for logging/register if statement checking if user_authenticated -->
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'add_category' %}">New Category</a>
