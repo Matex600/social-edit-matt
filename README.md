@@ -38,6 +38,8 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
    ![User-Stories](documentation/readme_images/epics_userstories.PNG)
 
   * I have taken an Agile approach to making my user stories and epics, I would like to greatly expand on this approach in future projects as I gain experience.
+  
+    ![AgileProject](documentation/readme_images/projectAgile.PNG)
 
   * Steps taken
 
@@ -117,7 +119,95 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
     + [Laptop [1366 x 768]](#laptop--1366-x-768-)
     + [Tablet](#tablet)
     + [Mobile](#mobile)
+
 # Features
+
+ ## Site Structure and Features
+
+  ### Home page
+
+  ![Home](documentation/readme_images/Home.PNG)
+
+  #### Navbar 
+
+  ![Navbar](documentation/readme_images/Navbar.PNG)
+
+  #### Create Post 
+
+  ![CreatePost](documentation/readme_images/CreatePost.PNG)
+  
+  #### Edit Post
+
+  ![EditPost](documentation/readme_images/Editpost.PNG)
+
+  #### New Category
+
+  ![NewCategory](documentation/readme_images/CreateCat.PNG)
+
+  ![CategoryDropdown](documentation/readme_images/Catdropdown.PNG)
+
+  #### User
+
+  ![UserCreateProfile](documentation/readme_images/ProfiledropbeforeUser.PNG)
+
+  ![UserProfileExists](documentation/readme_images/ProfiledropafterUser.PNG)
+
+  ![UpdateSettings](documentation/readme_images/UpdateSettings.PNG)
+
+  ![UpdateProfile](documentation/readme_images/UpdateProfile.PNG)
+
+  #### Search Bar
+
+  ![SearchBar](documentation/readme_images/Searchbar.PNG)
+
+  ### Blog Page
+
+  ![BlogDetails](documentation/readme_images/Blogdetails.PNG)
+
+  #### Up/down Vote
+
+  ![Upvote](documentation/readme_images/Upvote.PNG)
+
+  ![Downvote](documentation/readme_images/Downvote.PNG)
+
+  #### Comments
+
+  ![Comment](documentation/readme_images/Comment.PNG)
+
+  ![WaitingApproval](documentation/readme_images/Commentwaitingapproval.PNG)
+
+  ![NoComments](documentation/readme_images/Nocomments.PNG)
+
+  #### Author Profile
+
+  ![Userprofile](documentation/readme_images/Userprofile.PNG)
+
+
+  ### Categories Page
+
+  ![Categories](documentation/readme_images/Categories.PNG)
+
+  ### Profile Page
+
+  ![Profile](documentation/readme_images/Authorprofile.PNG)
+
+  ![BlogAuthor](documentation/readme_images/Authorblogdetails.PNG)
+
+  ### Login Page
+
+  ![Login](documentation/readme_images/Login.PNG)
+
+  ### Register Page
+
+  ![Register](documentation/readme_images/Register.PNG)
+
+  ### Search page
+
+  ![SearchPage](documentation/readme_images/Search.PNG)
+
+
+
+
  ## Technologies Used
   * Coding Languages
 
@@ -150,14 +240,24 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   * [Github](https://github.com/). - Hosting Repository code.
 
 * Testing Technologies
-
-
+ 
 
   * [W3C CSS3](https://jigsaw.w3.org/css-validator/). - Validate CSS
 
   * [DiffChecker](https://www.diffchecker.com/#). - Comparing code changes
-- [Testing](#testing)
-  * [Validation](#validation)
+
+# Testing
+
+  ## Code Validation
+  
+  ### HTML
+  * [Beautify](https://htmlbeautify.com/)
+
+    * I have used html beautify to improve visibility of my code and format it for easy reading and as extensions in gitpod such as beautify and better jinja made the code broken in some cases.
+
+ 
+    * 
+
   * [Bugs](#bugs)
    * ```
       DETAIL:  Key (slug)=() already exists.
