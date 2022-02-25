@@ -124,6 +124,10 @@ small.card-text.text-muted {
    font-size: 14px;
 }
 
+.container.comment-wrapper {
+   justify-content: center;
+   text-align: center;
+}
 
 /* Media Queries */
 

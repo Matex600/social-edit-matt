@@ -84,9 +84,14 @@
         </div>
         <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add a new comment
         </a>
+    {% else %}
+        <div>
+        <a href="{% url 'add_comment' post.pk %}" class="btn btn-warning">Add Comment
+        </a>
+    {% endif %}
+        </div>
       </div>
     </div>
-    {% endif %}
     {% endfor %}
   </div>
   {% endif %}

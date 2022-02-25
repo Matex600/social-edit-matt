@@ -4,8 +4,8 @@
 <h1>User Profile
 </h1>
 <div class="card mb-3" style="max-width: 100vw;">
-  <div class="row g-2">
-    <div class="col-md-2">
+  <div class="row row-cols-auto no-gutters">
+    <div class="col">
       {% if user_id.user_image %}
       <img src="{{ user_id.user_image.url }}" class="img-fluid rounded-start" alt="User image">
       {% else %}
@@ -13,7 +13,7 @@
            alt="Placeholder user image">
       {% endif %}
     </div>
-    <div class="col-md-10">
+    <div class="col card-body profile-card">
       <div class="card-body">
         <h5 class="card-title">
           {{ user_id.user.username|title }}
