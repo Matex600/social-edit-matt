@@ -13,6 +13,8 @@ My Goal is to create a functioning, responsive Blog that users can make blog pos
 
 The Sites purpose is to allow users to connect with each other and share things they find interesting like hobbies or news!
 
+I have built this project with the future in mind as I have many plans to expand, improve further modernise design, technology, styling and featureset.
+
 Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
 
@@ -60,8 +62,9 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
   * I Used code review on slack and recieved feedback to help improve user experience by adding an add post button if a category has no posts to make it easier for user, this has been implemented.
 
-  * 
+  * I have tested site functionality and creating a non admin account, testing login/register, creating post / category, commenting and liking posts, all of these features worked as expected.
 
+  * I asked my brother to test site functionality such as creating a post and category as after registering and to test login and logout as well as creating and editing a profile those features worked as expected.
 
 
   # Site Design
@@ -137,7 +140,7 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   * [Bootstrap 5](https://getbootstrap.com/). - Used for styling the site a framework addition to CSS3.
 
   * [Pylint](https://pylint.org/). - Analysing python code.
-  
+
 * Hosting Technologies
 
   * [Heroku](https://dashboard.heroku.com/login). - Deployment and hosting environment.
