@@ -5,8 +5,8 @@
 
     <h1>Blog Categories</h1>
 
-    {% for item in cate_menu_list %}
-        <h4><ul class="list-group-item list-group-item-dark m-4"><a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }}</a></ul></h4>
+    {% for category in categories %}
+        <h4><ul class="list-group-item list-group-item-dark m-4"><a class="dropdown-item" href="{% url 'category' category.id %}">{{ category.name }}</a></ul></h4>
     {% endfor %}
 
 
