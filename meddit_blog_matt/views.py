@@ -105,15 +105,16 @@ def category_list_view(request):
                   {'cate_menu_list': cate_menu_list})
 
 
-def category_view(request, cate):
+def category_view(request, id):
     """
     View displaying categories to the user.
     """
-    category_posts = Post.objects.filter(category=cate.replace('-', ' '))
+    category = get_object_or_404(Category, id=id)
+    category_posts = Post.objects.filter(category=category)
     return render(request, 'categories.html',
-                  {'cate': cate.title().replace('-', ' '),
+                  {'category': category,
                    'category_posts': category_posts})
-
+    
 
 def results_view(request):
     """
