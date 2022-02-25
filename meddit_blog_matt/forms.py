@@ -2,14 +2,6 @@ from django import forms
 from .models import Post, Category, Comment
 
 
-choices = Category.objects.all().values_list('name', 'name')
-
-choice_list = []
-
-for item in choices:
-    choice_list.append(item)
-
-
 class AddPostForm(forms.ModelForm):
     """
     Form for adding blog posts.
@@ -26,8 +18,6 @@ class AddPostForm(forms.ModelForm):
             'title': forms.TextInput(attrs={'class': 'form-control',
                                             'placeholder':
                                             'Choose a blog title!'}),
-            'category': forms.Select(choices=choice_list,
-                                     attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
             'blog_snippet': forms.Textarea(attrs={'class': 'form-control'}),
         }
@@ -46,8 +36,6 @@ class EditPostForm(forms.ModelForm):
         fields = ('title', 'category', 'body', 'blog_snippet', 'status')
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'category': forms.Select(choices=choice_list,
-                                     attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
             'blog_snippet': forms.Textarea(attrs={'class': 'form-control'}),
         }
