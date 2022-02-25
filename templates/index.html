@@ -25,9 +25,9 @@
               </h2>
               <p class="card-text">{{ post.blog_snippet | safe}}</p>
               </a>
-              <hr />
-              <p class="card-text h6">{{ post.date_created }} | <a href="{% url 'category' post.category|slugify %}">
-                {{post.category|title}}</a> | {{ post.author.username | title }}</p>
+              <hr/>
+              <p class="card-text h6">{{ post.date_created }} | <a href="{% url 'category' post.category.id %}">
+                {{post.category.name|title}}</a> | {{ post.author.username | title }}</p>
               {% if user.is_authenticated %}
               {% if user.id == post.author.id %}
               <a class="btn btn-success" href="{% url 'edit_post' post.pk  %}">Edit</a>
