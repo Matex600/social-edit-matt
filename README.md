@@ -31,28 +31,61 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   4. Login | Register | Logout
   5. Create | Update | User Profile
 
-- [User Experience](#user-experience)
-  * [User Stories](#user-stories)
+# User Experience
+  ### User Stories
+   ![User-Stories](documentation/readme_images/epics_userstories.PNG)
+
+  * I have taken an Agile approach to making my user stories and epics, I would like to greatly expand on this approach in future projects as I gain experience.
+
+  * Steps taken
+
+    1. Created issues tags showing with varying importance to the project.
+
+    2. Created issues with tags : 'Must have' (Most important features) 'Should have' (Should be implemented) 'Could have' (Implement if there is time) 'Won't have' (Features that have been outside of current scope)
+
+    3. Created Github Project (Old version) at time of submission a new version of Github project has been released I will implement this new version in future projects. I created a project with columns 'to do' (Work that needs to be one) 'In progress' (Feature in development) 'Done' (Feature complete entered testing stage) 'Future content' (Content implemented post release).
+
+    4. I then assigned issues to the project as development continued making decisions a long the way.
+
+    ### Significace and Complexity 
+    ![Significace and Complexity](documentation/readme_images/Significance_and_complexity.PNG) ![Key](documentation/readme_images/Significance_and_complexity_key.PNG)
+
+    5. All of the above have been implemented successfully.
+
+  ### User testing 
+
+  * I have recieved some feedback from my mentor on my project and I decided to adjust some styling to improve card colours for blog posts I made them a lighter color to complement rest of site.
+
+  * I have recieved feedback from my brother that helped me identify an issue with an image in blog details not aligning properly which has been fixed.
+
+  * I Used code review on slack and recieved feedback to help improve user experience by adding an add post button if a category has no posts to make it easier for user, this has been implemented.
+
+  * 
+
+
+
   # Site Design
 
   ## Composition
 
+  
   ### Fonts 
-    * [Roboto](https://fonts.google.com/specimen/Roboto). - Font used for Body text.
-    * [Roboto - Slab](https://fonts.google.com/specimen/Roboto+Slab?query=roboto+slab). - Font used for Header text.
 
-    * I have chosen these two fonts as they compliment themselves together and compliment my blog.
+  * [Roboto](https://fonts.google.com/specimen/Roboto). - Font used for Body text.
+  * [Roboto - Slab](https://fonts.google.com/specimen/Roboto+Slab?query=roboto+slab). - Font used for Header text.
 
-    * sans-serif is used as a backup font incase one or both fail for any reason.
+  * I have chosen these two fonts as they compliment themselves together and compliment my blog.
+
+  * sans-serif is used as a backup font incase one or both fail for any reason.
   ### Font Size
     
-    * I have kept font size as default as I feel that it looks good and what I wanted for the blog hence I have no need to change it.
+  * I have kept font size as default as I feel that it looks good and what I wanted for the blog hence I have no need to change it.
 
   ### Color Scheme
 
-    * color: #ffff01 | Highlighting Navbar links, for good accessability and indicates to user that they are hovering over a link.
+  * color: #ffff01 | Highlighting Navbar links, for good accessability and indicates to user that they are hovering over a link.
 
-    * color: #FFFFFF | Is used for text color within the navbar, blog titles on index, blog description, date, time, author and category.
+  * color: #FFFFFF | Is used for text color within the navbar, blog titles on index, blog description, date, time, author and category.
 
     * In the blog detail it is used for blog body text and user profile at foot of page.
 
@@ -154,6 +187,8 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
  ## Acknowledgment
   * [Django Documentation](https://docs.djangoproject.com/en/3.2/). - Helping me understand Django better.
 
+  * [Foreign Key Django](https://docs.djangoproject.com/en/3.2/topics/db/examples/many_to_one/).- This documentation guided me in creating a foreign key.
+
   * [Django for beginners](https://youtu.be/rHux0gMZ3Eg). - Thank you to programming with Mosh for helping me understand views and urls better.
 
   * [Python Django 7 course](https://www.youtube.com/watch?v=PtQiiknWUcI). - Thank you Traversy media for helping me learn more Django.
@@ -171,4 +206,13 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   * My mentor Maranatha Ilesanmi has helped me with improving the styling on my page and motivating me to push through any struggles I have had as well as offering useful advice on site layout. 
   * [Favicon](https://favicon.io/).- For converting my logo into a favicon.
 
-  * [Fix NoReverseMatch](https://stackoverflow.com/questions/38390177/what-is-a-noreversematch-error-and-how-do-i-fix-it).- This article helped me fix a few of the errors I got creating this blog.
+  * [Fix NoReverseMatch](https://stackoverflow.com/questions/38390177/what-is-a-noreversematch-error-and-how-do-i-fix-it).- This article helped me fix a few of the errors I got 
+  creating this blog.
+
+  * [From CharField to ForeignKey](https://stackoverflow.com/questions/35999186/change-type-of-django-model-field-from-charfield-to-foreignkey). - This article helped me convert categories from Charfield to ForeignKey.
+
+  * [Class has no Objects](https://youtu.be/BSKniGNL5CQ).- Thank you for this video guiding me to install pylint to resolve this issue.
+
+  * [Fontawesome](https://fontawesome.com/).- Arrow icon in Navbar.
+
+  * [Tutor support](https://codeinstitute.net/).- Helped me Reset my database twice during my project after having issues with database.
