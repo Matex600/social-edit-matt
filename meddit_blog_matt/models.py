@@ -15,6 +15,29 @@ STATUS = (
 )
 
 
+class Category(models.Model):
+    """
+    Class representing categories model.
+    """
+    name = models.CharField(max_length=255)
+
+    class Meta:
+        """
+        Change categorys to categories using class meta.
+        """
+        verbose_name_plural = "Categories"
+
+    def __str__(self):
+        return f"{self.name}"
+
+    def get_absolute_url(self):
+        """
+        This fixes an error which the button on add categories
+        is not taking user back as expected.
+        """
+        return reverse('home')
+
+
 class Post(models.Model):
     """
     A class to represent the model for posts in the blog
@@ -27,7 +50,7 @@ class Post(models.Model):
     body = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    category = models.CharField(max_length=255, default='Uncategorised')
+    category = models.ForeignKey(Category, related_name='blog_posts', on_delete=models.CASCADE)
     blog_snippet = models.CharField(max_length=255)
     post_image = CloudinaryField('image', null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
@@ -72,25 +95,3 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment {self.content} by {self.name}"
 
-
-class Category(models.Model):
-    """
-    Class representing categories model.
-    """
-    name = models.CharField(max_length=255)
-
-    class Meta:
-        """
-        Change categorys to categories using class meta.
-        """
-        verbose_name_plural = "Categories"
-
-    def __str__(self):
-        return f"{self.name}"
-
-    def get_absolute_url(self):
-        """
-        This fixes an error which the button on add categories
-        is not taking user back as expected.
-        """
-        return reverse('home')
