@@ -1,6 +1,6 @@
-# Meddit - Blog
-
 ![AmIresponsive](documentation/readme_images/amiresponsive.PNG)
+
+# Meddit - Blog
 
 [Site Live link](https://project4-matt-ci.herokuapp.com/)
 
@@ -282,20 +282,19 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
 # Testing
 
-  ## Code Validation
+  # Code Validation
   
-  ### HTML
+  ## HTML
   <hr>
 
-  * [Beautify](https://htmlbeautify.com/)
+  ### [Beautify](https://htmlbeautify.com/)
 
     * I have used html beautify to improve visibility of my code and format it for easy reading and as extensions in gitpod such as beautify and better jinja made the code broken in some cases.
 
   <br>
 
-  * [Nu Html Checker](https://validator.w3.org/nu/#textarea)
 
-  ### HTML 
+  ###  [Nu Html Checker](https://validator.w3.org/nu/#textarea)
   
   Passed all checks except update user as it uses a Django form and I am unable to fix these errors the page functions without problems.
 
@@ -306,7 +305,7 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   ![UpdateUser](documentation/testing/html/UpdateUser.PNG)
   
 
-  ### Css
+  ## Css
   <hr>
 
   <p>
@@ -320,20 +319,54 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   ![CSS TEST](documentation/testing/css/css-test.PNG)
   
   ### Pep8
+
+  All files passed pep8 tests
+
+  #### Files tested:
+
+  * meddit_users [Files](documentation/testing/pep8/meddit_users_pep8)
+
+  * meddit_matt [Files](documentation/testing/pep8/meddit_matt_pep8)
+
+  * meddit_blog_matt [Files](documentation/testing/pep8/meddit_blog_matt_pep8)
+
+  
   <hr>
 
+  # Bugs
+
+  ## Squashed Bugs
+
+  1. 
 
 
 
+  ## Remaining Bugs
 
+   ### None spotted
 
-  * [Bugs](#bugs)
-   * ```
-      DETAIL:  Key (slug)=() already exists.
-     ``` 
-     solution add null=True to slug model
+  ## Security 
 
+  I have set debug to be automatic using the following.
+  * settings .py
+      ```
+      SECURITY WARNING: don't run with debug turned on in production!
 
+      DEBUG = "DEVELOPMENT" in os.environ
+      ```
+  * env.py
+      ```
+      os.environ["DEVELOPMENT"] = "True"
+      ```
+  * urls.py
+      
+      ```
+      from django.conf import settings
+
+      from django.conf.urls.static import static
+
+      urlpatterns = [ path(...... ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+      ```
  # Development Process
   
 
