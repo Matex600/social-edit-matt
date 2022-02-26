@@ -7,15 +7,15 @@
 I recommend clicking any links found in this README with Ctrl + Left mouse click for (Windows) and Control + click (Mac) 
 # Project Introduction
 
-This website is a fullstack application using mainly the Django fullstack web framework.
+This website is a full-stack application using mainly the Django full-stack web framework.
 
-My Goal is to create a functioning and responsive Blog, that allows users can make blog posts. Users can also up vote and down vote as well as make comments.
+My goal is to create a functioning and responsive Blog, that allows users can make blog posts. Users can also upvote and downvote as well as make comments.
 
-The Sites purpose is to allow users to connect with each other, and share things they find interesting like hobbies or news!
+The sites purpose is to allow users to connect and share things they find interesting like hobbies or news!
 
-I have built this project with the future in mind, as I have many plans to expand, improve, modernise design, technology, styling and featureset.
+I have built this project with the future in mind, as I have many plans to expand, improve, modernise design, technology, styling, and features.
 
-Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
+Project 4 for [CodeInstitute](https://codeinstitute.net/) Full-stack course (5P)
 
 
  * This project is created using:
@@ -39,7 +39,7 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
   ![User-Stories](documentation/readme_images/epics_userstories.PNG)
 
-  * I have taken an Agile approach to making my user stories and epics, I would like to greatly expand on this approach in future projects as I gain experience.
+  * I have taken an Agile approach to make my user stories and epics, I would like to greatly expand on this approach in future projects as I gain experience.
   
   ![AgileProject](documentation/readme_images/projectAgile.PNG)
 
@@ -54,16 +54,16 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
     2. Created issues with tags: 'Must have' (Most important features) 'Should have' (Should be implemented) 'Could have' (Implement if there is time) 'Won't have' (Features that have been outside of current scope)
 
-    3. Created Github Project (Old version) at the time of submission; a new version of Github project has been released, I will implement this new version in future projects.
+    3. Created Github Project (Old version) at the time of submission; a new version of the Github project has been released, I will implement this new version in future projects.
 
-    4. I created a project with columns 'to do' (Work that needs to be done), 'In progress' (Feature in development), 'Done' (Feature complete and tested), 'Future content' (Content implemented post release).
+    4. I created a project with columns 'to do' (Work that needs to be done), 'In progress' (Feature in development), 'Done' (Feature complete and tested), 'Future content' (Content implemented post-release).
 
-    5. I then assigned 'issues' to the project as development continued, making decisions a long the way.
+    5. I then assigned 'issues' to the project as development continued, making decisions along the way.
 
     ### Significace and Complexity 
     <hr>
 
-    ![Significace and Complexity](documentation/readme_images/Significance_and_complexity.PNG)
+    ![Significance and Complexity](documentation/readme_images/Significance_and_complexity.PNG)
 
     ![Key](documentation/readme_images/Significance_and_complexity_key.PNG)
 
@@ -73,11 +73,11 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   <hr>
 
 
-  * I have recieved feedback from my mentor on my project, and I decided to adjust some styling to improve card colours for blog posts. I made them a lighter color to complement the rest of the site.
+  * I have received feedback from my mentor on my project, and I decided to adjust some styling to improve card colors  for blog posts. I made them a lighter color to complement the rest of the site.
 
-  * I have recieved feedback from my sibling, that enabled me to identify an issue with an image not aligning properly in the blog details therefore it has been patched.
+  * I have received feedback from my sibling, that enabled me to identify an issue with an image not aligning properly in the blog details therefore it has been patched.
 
-  * I used the code review channel on slack and recieved feedback to help improve user experience, by adding an add post button if a category has no posts to make it easier for the user. This has been implemented.
+  * I used the code review channel on slack and received feedback to help improve user experience, by adding an add post button if a category has no posts to make it easier for the user. This has been implemented.
 
   * I have tested the site functionality and created a non-admin account.
 
@@ -101,9 +101,9 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   * [Roboto](https://fonts.google.com/specimen/Roboto). - Font used for Body text.
   * [Roboto - Slab](https://fonts.google.com/specimen/Roboto+Slab?query=roboto+slab). - Font used for Header text.
 
-  * I have chosen these two fonts, as they compliment eachother which additionally compliment my blog.
+  * I have chosen these two fonts, as they complement each other which additionally complement my blog.
 
-  * Sans-Serif is used as a backup font incase one or both fail for any reason.
+  * Sans-Serif is used as a backup font in case one or both fail for any reason.
   ### Font Size
   <hr>
 
@@ -112,19 +112,19 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   ### Color Scheme
   <hr>
 
-  * color: #ffff01 | Highlighting Navbar links, for good accessability and indicates to user that they are hovering over a link.
+  * color: #ffff01 | Highlighting Navbar links, for good accessibility and indicates to the user that they are hovering over a link.
 
-  * color: #FFFFFF | Is used for text color within the navbar, blog titles on index, blog description, date, time, author and category.
+  * color: #FFFFFF | Is used for text color within the navbar, blog titles on the index, blog description, date, time, author, and category.
 
-  * In the blog detail it is used for blog body text and user profile at foot of page.
+  * In the blog detail, it is used for blog body text and user profile at foot of the page.
 
-  * color: #E0DFDF | This color is used for the body (blog background) to compliment the other slightly darker colour.
+  * color: #E0DFDF | This color is used for the body (blog background) to compliment the other slightly darker color.
 
-  * color: #494242 | I have chosen this color for the cards for individual blogs as I feel that it makes them stand out and the center of attention.
+  * color: #494242 | I have chosen this color for the cards for individual blogs as I feel that it makes them stand out and be the center of attention.
 
-  * color: #221f1f | I have chosen this color for the navigation bar to as it is a darker gray to my other colors and is bold and makes the navigation standout better.
+  * color: #221f1f | I have chosen this color for the navigation bar as it is a darker gray than my other colors and is bold and makes the navigation stand out better.
 
-  * color: #000000 I used this colour for the tile of the blog details page to make it standout as its an important piece of the blog the information below the title is this color also to separate it from the body content.
+  * color: #000000 I used this color for the tile of the blog details page to make it stand out as it's an important piece of the blog the information below the title is this color also to separate it from the body content.
 
     ### Color Pallet
     <hr>
@@ -135,7 +135,7 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
     ![Color-#494242](documentation/readme_images/color494242.PNG)
 
-    ### Colour grid
+    ### Color grid
     <hr>
 
     ![Eight-Shapes-Grid](documentation/readme_images/contrastgrid.PNG)
@@ -143,7 +143,6 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   ### Balsamiq Wireframes
 
   <hr>
-  
 
   #### PC Wireframes
   
@@ -159,6 +158,10 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
   #### Mobile
    * [Mobile](documentation/wireframes_updated/mobile)
+
+  #### Initial wireframes
+
+   * [Old](documentation/wireframes_old)
 
 # Features
 
@@ -294,7 +297,7 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
   ### [Beautify](https://htmlbeautify.com/)
 
-    * I have used html beautify to improve visibility of my code and format it for easy reading and as extensions in gitpod such as beautify and better jinja made the code broken in some cases.
+    * I have used HTML beautify to improve the visibility of my code and format it for easy reading and extensions in gitpod such as beautify and better jinja made the code broken in some cases.
 
   <br>
 
@@ -348,15 +351,15 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
      * Fix = Reset database
 
-     * Commands in development process
+     * Commands in the development process
 
   2. Categories not appearing for 20+ minutes in Create a Post.
 
      * Cause = category Charfield in Post model
 
-     * Fix = Change Charfield to Foreignkey, update urls, views and templates
+     * Fix = Change Charfield to Foreign key, update URLs, views, and templates
 
-     * Images in development process
+     * Images in the development process
 
   3. NoReverseMatch multiple templates
 
@@ -376,13 +379,13 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
      * Fix = Fix syntax in if statement and add else statement
   
-  6. Html escaping into browser from ```{{ post.body }}```
+  6. Html escaping into the browser from ```{{ post.body }}```
 
      * Cause = Unknown
 
      * Fix =  ```{{ post.body | safe }}```
 
-  7. Cloudinary files not working when creating post
+  7. Cloudinary files not working when creating a post
 
      * Cause = Incorrectly set up cloudinary path
 
@@ -423,9 +426,9 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   <br>
   Development began with, opening a repository with code institutes github template, and installing all required packages, libraries, frameworks, connecting to Heroku PostgreSQL. 
 
-  Followed by constructing a github project, 'issues' and their corresponding tags and adding 'issues' to corresponding columns.
+  This followed by constructing a github project, 'issues' and their corresponding tags, and adding 'issues' to corresponding columns.
 
-  After this I created the initial wireframing for the site structure along with making a logic diagram.
+  After this, I created the initial wireframing for the site structure along with making a logic diagram.
 
   ![LogicDiagram](documentation/readme_images/Project_4_Diagram.PNG)
 
@@ -441,17 +444,17 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   
   The early deployment was to avoid issues further down the line, being granted the ability to debug deployment failures with ease.
 
-  In this phase I added some basic CRUD functionality with creating, editing and deleting posts by creating the Post model and @admin.register function.
+  In this phase, I added some basic CRUD functionality with creating, editing, and deleting posts by creating the Post model and @admin.register function.
 
   While developing I made sure to follow the agile development process. 
 
-  I begun using bootstrap and created templates to display posts in basic form along with a functional navbar.
+  I began using bootstrap and created templates to display posts in basic form along with a functional navbar.
 
   As well as an early version of authentication with logging in registering and logging out and fixing issues.
 
-  In this phase I encountered a major bug in my database, where I could not make migrations after spending a considerable amount of time I decided to reset the DB and start over with creating test posts and categories.
+  In this phase, I encountered a major bug in my database, where I could not make migrations after spending a considerable amount of time I decided to reset the DB and start over with creating test posts and categories.
 
-  Code used to reset database
+  Code used to reset the database
 
     ```
 
@@ -478,13 +481,13 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   ### Troubleshooting | Categories
   <br>
   
-  Development Phase 3 began with an increase to my availabilty, in this phase I added the ability to add an ordered category and linking blog pages to their categories.
+  Development Phase 3 began with an increase to my availability, in this phase I added the ability to add an ordered category and link blog pages to their categories.
 
-  As well as adding categories dropdown to navigation and authenticating users as to limit only logged in users to create posts.
+  As well as adding categories dropdown to navigation and authenticating users to limit only logged-in users to create posts.
 
-  During this phase I also added functional upvote and downvote buttons.
+  During this phase, I also added functional upvote and downvote buttons.
 
-  Phase 3 in development brought in a lot of issues, I experienced a large share of errors when testing out functionality and had to spend a lot of time researching and debugging the application, This slowed the process considerably.
+  Phase 3 in development brought in a lot of issues, I experienced a large share of errors when testing out functionality and had to spend a lot of time researching and debugging the application, Which slowed the process considerably.
 
   <hr>
 
@@ -495,13 +498,13 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   
   Phase 4 of development added most of the styling and most final functionality and styling to Posts, Categories, Likes.
 
-  In this phase I created the 'User-profile' page with an ability for the user to edit profile settings and information.
+  In this phase, I created the 'User-profile' page with the ability for the user to edit profile settings and information.
 
-  In addition I created functionality for changing user password, uploading user images to profile and posts with cloudinary.
+  In addition, I created functionality for changing user passwords, uploading user images to profiles and posts with cloudinary.
 
-  I struggled with the ``` NoReverseMatch ``` error I was able to fix this by modifying templates, urls and views.
+  I struggled with the ``` NoReverseMatch ``` error I was able to fix this by modifying templates, urls, and views.
 
-  Furthermore I enabled users to create comments and post comments that are approved by an Administrator.
+  Furthermore, I enabled users to create comments and post comments that are approved by an Administrator.
 
   As well as styling the Login and register page to the final design stage.
 
@@ -511,11 +514,11 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   Time spent: 8-10 hours daily
   ### Code Cleanup | Final Design | README
 
-  Development phase 5 begun with final styling of the website, and using bootstrap to create a grid system to place all site components in a uniform manner.
+  Development phase 5 began with the final styling of the website and using bootstrap to create a grid system to place all site components uniformly.
 
-  In addition to this I tested the site manually as well as asking family, friends and fellow students to help me test site functionality, This allowed me to make some crucial changes to improve overall design and functionality.
+  In addition to this, I tested the site manually as well as asked family, friends and fellow students to help me test site functionality, This allowed me to make some crucial changes to improve overall design and functionality.
 
-  I encountered a problem with categories not appearing for 20-30 mintues when creating one in the Heroku deployed site I resolved this by destroying and replacing Database and changing category in post model to a Foreignkey from a Charfield, migrating a new database and remaking views, urls and templates to accomodate foreign keys.
+  I encountered a problem with categories not appearing for 20-30 minutes when creating one in the Heroku deployed site I resolved this by destroying and replacing the Database and changing category in the post model to a Foreignkey from a Charfield, migrating a new database and remaking views, urls and templates to accommodate foreign keys.
 
   ![View](documentation/bugs/category.view.PNG)
 
@@ -547,9 +550,9 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
   * Log in to Github.
   
-  * Access my repository using above link.
+  * Access my repository using the above link.
 
-  * In repository page select code next to Gitpod.
+  * In the repository page select code next to Gitpod.
 
   * Button, make sure HTTPS is selected.
 
@@ -567,7 +570,7 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
   1. Navigate to github repositores select this [repository](https://github.com/Matex600/social-edit-matt).
 
-  2. On the right of the repository name you will find the fork button next to star and watch buttons.
+  2. On the right of the repository name you will find the fork button next to the star and watch buttons.
 
   3. Pressing said button will create a copy for you to use.
 
@@ -576,7 +579,7 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   * Development Environment
     1. Create requirements.txt ```pip3 freeze --local > requirements.txt```
     
-    2. Create Procfile containing application name ensure proper formatting or deployment will fail.
+    2. Create Procfile containing application name to ensure proper formatting or deployment will fail.
 
     3. Commit and push changes to Github.
 
@@ -593,13 +596,13 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
     go to settings go to **Config Vars**
     use the **DATABASE_URL** Value and add it to your env.py file and connect it via settings.py.
 
-    5. Create a **SECRET_KEY** Key and the Value as desired key.
+    5. Create a **SECRET_KEY** Key and the Value as the desired key.
 
     6. Next go to the **Deploy** tab next to **Deployment Method** click **GitHub** connect your account and repository.
 
     7. **Recommended** enable automatic deploys.
 
-    8. At the Bottom of the page hit deploy branch making sure it is set to **main**
+    8. At the bottom of the page hit deploy branch making sure it is set to **main**
 
     #### **Note.**
 
