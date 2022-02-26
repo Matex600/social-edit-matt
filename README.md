@@ -94,7 +94,6 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   # Site Design
 
   ## Composition
-  <hr>
 
   ### Fonts 
   <hr>
@@ -242,8 +241,6 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   ![SearchPage](documentation/readme_images/Search.PNG)
 
 
-
-
  ## Technologies Used
   * Coding Languages
 
@@ -288,22 +285,29 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   ## Code Validation
   
   ### HTML
+  <hr>
 
   * [Beautify](https://htmlbeautify.com/)
 
     * I have used html beautify to improve visibility of my code and format it for easy reading and as extensions in gitpod such as beautify and better jinja made the code broken in some cases.
 
   <br>
-  
+
   * [Nu Html Checker](https://validator.w3.org/nu/#textarea)
 
-  ### HTML Passed all checks except update user as it uses a Django form and I am unable to fix these errors the page functions without problems.
+  ### HTML 
+  
+  Passed all checks except update user as it uses a Django form and I am unable to fix these errors the page functions without problems.
+
+  These files can be found [Here](documentation/testing/html)
+  
   <br>
 
   ![UpdateUser](documentation/testing/html/UpdateUser.PNG)
   
 
   ### Css
+  <hr>
 
   <p>
   <a href="http://jigsaw.w3.org/css-validator/check/referer">
@@ -315,6 +319,13 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
   ![CSS TEST](documentation/testing/css/css-test.PNG)
   
+  ### Pep8
+  <hr>
+
+
+
+
+
 
   * [Bugs](#bugs)
    * ```
