@@ -637,32 +637,54 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full-stack course (5P)
  # Deployment using Heroku
 
   * Development Environment
-    1. Create requirements.txt ```pip3 freeze --local > requirements.txt```
+
+    1. Create env.py it needs to contain these 4 variables.
+
+      * Cloudinary can be obtained here [URL](https://cloudinary.com/)
+
+      * Secret key is a password of your choosing make it a strong one [KEY](https://djecrety.ir/)
+
+      * Obtain Heroku postgreSQL [HERE](https://dashboard.heroku.com/apps)
+
+        ```
+        import os
+
+        os.environ['DATABASE_URL'] = 'postgres: '...'
+
+        os.environ['SECRET_KEY'] = '...'
+
+        os.environ['CLOUDINARY_URL'] = '...'
+
+        os.environ["DEVELOPMENT"] = "True"
+
+        ```
+
+    2. Create requirements.txt ```pip3 freeze --local > requirements.txt```
     
-    2. Create Procfile containing application name to ensure proper formatting or deployment will fail.
+    3. Create Procfile containing application name to ensure proper formatting or deployment will fail.
 
-    3. Commit and push changes to Github.
+    4. Commit and push changes to Github.
 
-    4. Move to Heroku part of deployment.
+    5. Move to Heroku part of deployment.
 
   * Heroku
-    1. Create an account with [Heroku](https://signup.heroku.com/).
+    6. Create an account with [Heroku](https://signup.heroku.com/).
 
-    2. Create a new app, with an appropriate region and name.
+    7. Create a new app, with an appropriate region and name.
 
-    3. In **Resources** add **Heroku Postgres**.
+    8. In **Resources** add **Heroku Postgres**.
 
-    4. Within your newly created app
+    9. Within your newly created app
     go to settings go to **Config Vars**
     use the **DATABASE_URL** Value and add it to your env.py file and connect it via settings.py.
 
-    5. Create a **SECRET_KEY** Key and the Value as the desired key.
+    10. Create a **SECRET_KEY** Key and the Value as the desired key.
 
-    6. Next go to the **Deploy** tab next to **Deployment Method** click **GitHub** connect your account and repository.
+    11. Next go to the **Deploy** tab next to **Deployment Method** click **GitHub** connect your account and repository.
 
-    7. **Recommended** enable automatic deploys.
+    12. **Recommended** enable automatic deploys.
 
-    8. At the bottom of the page hit deploy branch making sure it is set to **main**
+    13. At the bottom of the page hit deploy branch making sure it is set to **main**
 
     #### **Note.**
 
