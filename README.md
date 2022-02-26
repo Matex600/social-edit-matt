@@ -249,6 +249,19 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full-stack course (5P)
   ![SearchPage](documentation/readme_images/Search.PNG)
 
 
+  ## Database Models
+  <hr>
+
+  ![Post](documentation/database_model/dbmodelpost.PNG)
+
+  ![Category](documentation/database_model/DBmodelcategory.PNG)
+
+  ![Comment](documentation/database_model/dbmodelcomment.PNG)
+
+  ![UserProfile](documentation/database_model/dbmodeluserprofile.PNG)
+
+  <hr>
+  
  ## Technologies Used
   * Coding Languages
 
@@ -288,7 +301,21 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full-stack course (5P)
 
   * [DiffChecker](https://www.diffchecker.com/#). - Comparing code changes
 
+
+
+
 # Testing
+
+  # Manual Testing
+
+
+
+
+
+
+
+
+
 
   # Code Validation
   
@@ -297,7 +324,7 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full-stack course (5P)
 
   ### [Beautify](https://htmlbeautify.com/)
 
-    * I have used HTML beautify to improve the visibility of my code and format it for easy reading and extensions in gitpod such as beautify and better jinja made the code broken in some cases.
+   * I have used HTML beautify to improve the visibility of my code and format it for easy reading and extensions in gitpod such as beautify and better jinja made the code broken in some cases.
 
   <br>
 
