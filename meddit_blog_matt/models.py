@@ -50,7 +50,8 @@ class Post(models.Model):
     body = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    category = models.ForeignKey(Category, related_name='blog_posts', on_delete=models.CASCADE)
+    category = models.ForeignKey(
+        Category, related_name='blog_posts', on_delete=models.CASCADE)
     blog_snippet = models.CharField(max_length=255)
     post_image = CloudinaryField('image', null=True, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
@@ -94,4 +95,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.content} by {self.name}"
-

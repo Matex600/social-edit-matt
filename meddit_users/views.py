@@ -8,11 +8,7 @@ from .forms import (RegisterForm, EditUserForm,
                     PasswordUpdatingForm, ProfileForm)
 
 
-# I have disabled error too many ancestors as I have have been unable to fix
-# within time scale as it would mean re writing code this is will be a future update.
-
-
-class CreateProfilePageView(CreateView):  # pylint: disable=too-many-ancestors
+class CreateProfilePageView(CreateView):
     """
     View using form profileform to for creating user profile.
     """
@@ -25,7 +21,7 @@ class CreateProfilePageView(CreateView):  # pylint: disable=too-many-ancestors
         return super().form_valid(form)
 
 
-class UpdateProfileView(generic.UpdateView):  # pylint: disable=too-many-ancestors
+class UpdateProfileView(generic.UpdateView):
     """
     View to displaying form in update profile template.
     """
@@ -49,7 +45,7 @@ class UserProfilePageView(DetailView):
         return context
 
 
-class UpdatePasswordsView(PasswordChangeView):  # pylint: disable=too-many-ancestors
+class UpdatePasswordsView(PasswordChangeView):
     """
     View for custom form to display updating user password.
     """
@@ -64,7 +60,7 @@ def password_success(request):
     return render(request, 'registration/password_success.html', {})
 
 
-class UserRegisterView(generic.CreateView):  # pylint: disable=too-many-ancestors
+class UserRegisterView(generic.CreateView):
     """
     View for registering users using customised form.
     """
@@ -73,7 +69,7 @@ class UserRegisterView(generic.CreateView):  # pylint: disable=too-many-ancestor
     success_url = reverse_lazy('login')
 
 
-class UserUpdateView(generic.UpdateView):  # pylint: disable=too-many-ancestors
+class UserUpdateView(generic.UpdateView):
     """
     View for editing users profile using customised form.
     """

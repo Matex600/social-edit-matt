@@ -114,7 +114,7 @@ def category_view(request, id):
     return render(request, 'categories.html',
                   {'category': category,
                    'category_posts': category_posts})
-    
+
 
 def results_view(request):
     """
