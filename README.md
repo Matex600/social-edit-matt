@@ -35,11 +35,18 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
 # User Experience
   ### User Stories
-   ![User-Stories](documentation/readme_images/epics_userstories.PNG)
+  <hr>
+
+  ![User-Stories](documentation/readme_images/epics_userstories.PNG)
 
   * I have taken an Agile approach to making my user stories and epics, I would like to greatly expand on this approach in future projects as I gain experience.
   
-    ![AgileProject](documentation/readme_images/projectAgile.PNG)
+  ![AgileProject](documentation/readme_images/projectAgile.PNG)
+
+  Github issues and project were created according to the MoSCoW prioritization technique.
+
+  <br>
+  <hr>
 
   * Steps Taken:
 
@@ -54,11 +61,17 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
     5. I then assigned 'issues' to the project as development continued, making decisions a long the way.
 
     ### Significace and Complexity 
-    ![Significace and Complexity](documentation/readme_images/Significance_and_complexity.PNG) ![Key](documentation/readme_images/Significance_and_complexity_key.PNG)
+    <hr>
+
+    ![Significace and Complexity](documentation/readme_images/Significance_and_complexity.PNG)
+
+    ![Key](documentation/readme_images/Significance_and_complexity_key.PNG)
 
     6. All of the above has been implemented successfully.
 
   ### User testing 
+  <hr>
+
 
   * I have recieved feedback from my mentor on my project, and I decided to adjust some styling to improve card colours for blog posts. I made them a lighter color to complement the rest of the site.
 
@@ -81,9 +94,10 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   # Site Design
 
   ## Composition
+  <hr>
 
-  
   ### Fonts 
+  <hr>
 
   * [Roboto](https://fonts.google.com/specimen/Roboto). - Font used for Body text.
   * [Roboto - Slab](https://fonts.google.com/specimen/Roboto+Slab?query=roboto+slab). - Font used for Header text.
@@ -92,42 +106,55 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
   * Sans-Serif is used as a backup font incase one or both fail for any reason.
   ### Font Size
-    
+  <hr>
+
   * I have kept font size as default as I feel that it looks good, and what I wanted for the blog I have no need to change it.
 
   ### Color Scheme
+  <hr>
 
   * color: #ffff01 | Highlighting Navbar links, for good accessability and indicates to user that they are hovering over a link.
 
   * color: #FFFFFF | Is used for text color within the navbar, blog titles on index, blog description, date, time, author and category.
 
-    * In the blog detail it is used for blog body text and user profile at foot of page.
+  * In the blog detail it is used for blog body text and user profile at foot of page.
 
-    * color: #E0DFDF | This color is used for the body (blog background) to compliment the other slightly darker colour.
+  * color: #E0DFDF | This color is used for the body (blog background) to compliment the other slightly darker colour.
 
-    * color: #494242 | I have chosen this color for the cards for individual blogs as I feel that it makes them stand out and the center of attention.
+  * color: #494242 | I have chosen this color for the cards for individual blogs as I feel that it makes them stand out and the center of attention.
 
-    * color: #221f1f | I have chosen this color for the navigation bar to as it is a darker gray to my other colors and is bold and makes the navigation standout better.
+  * color: #221f1f | I have chosen this color for the navigation bar to as it is a darker gray to my other colors and is bold and makes the navigation standout better.
 
-    * color: #000000 I used this colour for the tile of the blog details page to make it standout as its an important piece of the blog the information below the title is this color also to separate it from the body content.
+  * color: #000000 I used this colour for the tile of the blog details page to make it standout as its an important piece of the blog the information below the title is this color also to separate it from the body content.
 
     ### Color Pallet
+    <hr>
     
     ![Color-Pallete](documentation/readme_images/colourpallete.PNG)
     ### Blog card color
+    <hr>
 
     ![Color-#494242](documentation/readme_images/color494242.PNG)
 
     ### Colour grid
+    <hr>
 
     ![Eight-Shapes-Grid](documentation/readme_images/contrastgrid.PNG)
 
-  * [Wireframes](#wireframes)
-    + [Balsamiq Wireframes](#balsamiq-wireframes)
-    + [PC [2560 x 1440]](#pc--2560-x-1440-)
-    + [Laptop [1366 x 768]](#laptop--1366-x-768-)
-    + [Tablet](#tablet)
-    + [Mobile](#mobile)
+  ### Balsamiq Wireframes
+
+  <hr>
+  
+
+  PC 
+
+  ![]
+
+  Laptop 
+
+  Tablet
+
+  Mobile
 
 # Features
 
@@ -249,7 +276,8 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   * [Github](https://github.com/). - Hosting Repository code.
 
 * Testing Technologies
- 
+
+  * [Nu Html Checker](https://validator.w3.org/nu/#textarea). - Validate HTML
 
   * [W3C CSS3](https://jigsaw.w3.org/css-validator/). - Validate CSS
 
@@ -260,20 +288,40 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   ## Code Validation
   
   ### HTML
+
   * [Beautify](https://htmlbeautify.com/)
 
     * I have used html beautify to improve visibility of my code and format it for easy reading and as extensions in gitpod such as beautify and better jinja made the code broken in some cases.
 
- 
-    * 
+  <br>
+  
+  * [Nu Html Checker](https://validator.w3.org/nu/#textarea)
+
+  ### HTML Passed all checks except update user as it uses a Django form and I am unable to fix these errors the page functions without problems.
+  <br>
+
+  ![UpdateUser](documentation/testing/html/UpdateUser.PNG)
+  
+
+  ### Css
+
+  <p>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="Valid CSS!" />
+    </a>
+  </p>
+
+  ![CSS TEST](documentation/testing/css/css-test.PNG)
+  
 
   * [Bugs](#bugs)
    * ```
       DETAIL:  Key (slug)=() already exists.
      ``` 
      solution add null=True to slug model
-- [Site Deployment](#site-deployment)
-  * Deploying project to Heroku - [Live Link](https://project4-matt-ci.herokuapp.com/)
+
 
  # Development Process
   
