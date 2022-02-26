@@ -40,11 +40,11 @@
             {% if cate_menu %}
             <!-- Category Menu -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+              <a class="nav-link dropdown-toggle navbarDropdown" href="#" role="button"
                  data-bs-toggle="dropdown" aria-expanded="false">
                 Categories
               </a>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+              <ul class="dropdown-menu dropdown-menu-dark" aria-label="navbarDropdown">
                 {% for category in categories %}
                 <li>
                   <a class="dropdown-item" href="{% url 'category' category.id %}">{{ category.name }}
@@ -90,27 +90,40 @@
           {% if user.is_authenticated %}
           <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle me-2" href="#" id="navbarDropdown" role="button"
+              <a class="nav-link dropdown-toggle me-2 navbarDropdown" href="#" role="button"
                  data-bs-toggle="dropdown" aria-expanded="false">
                 {{ user.username|title }}
               </a>
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'update_profile' %}">Edit Settings
-                </a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-label="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="{% url 'update_profile' %}">Edit
+                     Settings
+                  </a>
+                </li>
                 {% if user.userprofile.id %}
-                <a class="dropdown-item" href="{% url 'edit_profile' user.userprofile.id %}">Edit
-                  Profile
-                </a>
-                <a class="dropdown-item" href="{% url 'show_profile' user.userprofile.id %}">Go to
-                  Profile
-                </a>
-                <a class="dropdown-item" href="{% url 'logout' %}">Logout
-                </a>
+                <li>
+                  <a class="dropdown-item" href="{% url 'edit_profile' user.userprofile.id %}">Edit
+                    Profile
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'show_profile' user.userprofile.id %}">Go to
+                    Profile
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'logout' %}">Logout
+                  </a>
+                </li>
                 {% else %}
-                <a class="dropdown-item" href="{% url 'create_profile' %}">Create Profile
-                </a>
-                <a class="dropdown-item" href="{% url 'logout' %}">Logout
-                </a>
+                <li>
+                  <a class="dropdown-item" href="{% url 'create_profile' %}">Create Profile
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'logout' %}">Logout
+                  </a>
+                </li>
                 {% endif %}
               </ul>
             </li>
