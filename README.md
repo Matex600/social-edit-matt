@@ -337,9 +337,51 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
 
   ## Squashed Bugs
 
-  1. 
+  1. Database bug unable to migrate models.
 
+     * Cause = Unknown
 
+     * Fix = Reset database
+
+     * Commands in development process
+
+  2. Categories not appearing for 20+ minutes in Create a Post.
+
+     * Cause = category Charfield in Post model
+
+     * Fix = Change Charfield to Foreignkey, update urls, views and templates
+
+     * Images in development process
+
+  3. NoReverseMatch multiple templates
+
+     * Cause = View does not reverse after action
+
+     * Fix = Add reverse to views and from django.urls import reverse_lazy, reverse
+  
+  4. Django f"" not working properly in Admin panel
+
+     * Cause = Author field not in list_display
+
+     * Fix = Add Author to list_display
+
+  5. Button not changing color when upvoting or downvoting
+
+     * Cause = Incorrect syntax if statement in template
+
+     * Fix = Fix syntax in if statement and add else statement
+  
+  6. Html escaping into browser from ```{{ post.body }}```
+
+     * Cause = Unknown
+
+     * Fix =  ```{{ post.body | safe }}```
+
+  7. Cloudinary files not working when creating post
+
+     * Cause = Incorrectly set up cloudinary path
+
+     * Fix = DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
   ## Remaining Bugs
 
