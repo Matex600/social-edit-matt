@@ -145,15 +145,20 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full stack course (5P)
   <hr>
   
 
-  PC 
+  #### PC Wireframes
+  
+   * [Desktop](documentation/wireframes_updated/desktop)
 
-  ![]
+  #### Laptop Wireframes
 
-  Laptop 
+   * [Laptop](documentation/wireframes_updated/laptop)
 
-  Tablet
+  #### Tablet Wireframes
 
-  Mobile
+   * [Tablet](documentation/wireframes_updated/tablet)
+
+  #### Mobile
+   * [Mobile](documentation/wireframes_updated/mobile)
 
 # Features
 
