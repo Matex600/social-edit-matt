@@ -261,7 +261,7 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full-stack course (5P)
   ![UserProfile](documentation/database_model/dbmodeluserprofile.PNG)
 
   <hr>
-  
+
  ## Technologies Used
   * Coding Languages
 
@@ -308,8 +308,41 @@ Project 4 for [CodeInstitute](https://codeinstitute.net/) Full-stack course (5P)
 
   # Manual Testing
 
+  ## Registering
+
+  Testing if you can try to register without filling out forms.
+
+  ![Register](documentation/manual_test/registerusermanual.PNG)
 
 
+  ![Register2](documentation/manual_test/registermanual.PNG)
+
+
+  ## Loging in 
+   
+   Testing login functionality to see if you can enter short password or existing username.
+
+   ![Login2](documentation/manual_test/loginmanual.PNG)
+
+  ## Create post
+   
+   Testing to see if you can create a post without a snippet telling the user something about the post before they open a post.
+
+   ![Addpost](documentation/manual_test/addingpost.PNG)
+
+  ## Delete post
+
+   Testing to see if you get prompted before deleting a post.
+
+   ![Deletepost](documentation/manual_test/Deletepostmanual.PNG)
+
+  ## Comment 
+
+   Testing to see if you can post a comment, upvote, downvote and if a admin has to approve comment it .
+
+  ![Commentapproval](documentation/manual_test/commentadminmanual.PNG)
+
+  ![Commentlike](documentation/manual_test/commentlikemanual.PNG)
 
 
 
